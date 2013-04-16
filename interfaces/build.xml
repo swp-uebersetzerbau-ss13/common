@@ -1,0 +1,47 @@
+<project name="Common-Interfaces" basedir="." default="run">
+	<property name="src.dir" value="src" />
+	<property name="bin.dir" value="bin" />
+	<property name="doc.dir" value="doc" />
+	
+	<!-- Classpath -->
+	<path id="classpath">
+	</path>
+	
+	<!-- Target: clean -->
+	<target name="clean">
+		<delete dir="${bin.dir}" />
+		<mkdir dir="${bin.dir}" />
+		
+		<delete dir="${doc.dir}" />
+		<mkdir dir="${doc.dir}" />
+	</target>
+	
+	<!-- Target: build -->
+	<target name="build" depends="clean">
+		<javac srcdir="${src.dir}" destdir="${bin.dir}" classpathref="classpath" />
+	</target>
+	
+	<!-- Target: doc -->
+	<target name="doc">
+		<javadoc
+	    	access="package" 
+	    	author="true" 
+	    	classpathref="classpath" 
+	    	destdir="${doc.dir}" 
+	    	doctitle="${ant.project.name}" 
+	    	nodeprecated="false" 
+	    	nodeprecatedlist="false" 
+	    	noindex="false" 
+	    	nonavbar="false" 
+	    	notree="false" 
+	    	source="1.7"  
+	    	sourcepath="src" 
+	    	splitindex="true" 
+	    	use="true" 
+	    	version="true"
+	    	linksource="true" />
+	</target>
+	
+	<!-- Target: run -->
+	<target name="run" depends="build, doc" />
+</project>
