@@ -22,8 +22,6 @@ public interface IntermediateCodeGenerator {
 	 * 
 	 * @param ast
 	 *            The semantically correct abstract syntax tree.
-	 * @param symbolTable
-	 *            The symbol table.
 	 * @throws IntermediateCodeGeneratorException
 	 *             Thrown if an error occurs.
 	 */

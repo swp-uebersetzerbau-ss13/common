@@ -37,6 +37,14 @@ public class ArrayType extends Type {
 	}
 	
 	/**
+	 * Return the number of elements this array can store.
+	 * @return
+	 */
+	public int getLength() {
+		return this.length;
+	}
+	
+	/**
 	 * Get the inner type of this array. This is the type of the array elements.
 	 * @return The type of the array elements.
 	 */

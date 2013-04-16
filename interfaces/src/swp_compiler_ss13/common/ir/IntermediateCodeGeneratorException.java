@@ -23,38 +23,40 @@ public class IntermediateCodeGeneratorException extends Exception {
 	private static final long serialVersionUID = -8670103678115061426L;
 
 	/**
-	 * {@inheritDoc}
+	 * Create a new IntermediateCodeGeneratorException.
 	 */
 	public IntermediateCodeGeneratorException() {
 	}
 
 	/**
-	 * {@inheritDoc}
+	 * Create a new IntermediateCodeGeneratorException.
+	 * 
+	 * @param message
+	 *            The error message.
 	 */
 	public IntermediateCodeGeneratorException(String message) {
 		super(message);
 	}
 
 	/**
-	 * {@inheritDoc}
+	 * Create a new IntermediateCodeGeneratorException.
+	 * 
+	 * @param cause
+	 *            The error cause.
 	 */
 	public IntermediateCodeGeneratorException(Throwable cause) {
 		super(cause);
 	}
 
 	/**
-	 * {@inheritDoc}
+	 * Create a new IntermediateCodeGeneratorException.
+	 * 
+	 * @param message
+	 *            The error message.
+	 * @param cause
+	 *            The error cause.
 	 */
 	public IntermediateCodeGeneratorException(String message, Throwable cause) {
 		super(message, cause);
 	}
-
-	/**
-	 * {@inheritDoc}
-	 */
-	public IntermediateCodeGeneratorException(String message, Throwable cause,
-			boolean enableSuppression, boolean writableStackTrace) {
-		super(message, cause, enableSuppression, writableStackTrace);
-	}
-
 }
