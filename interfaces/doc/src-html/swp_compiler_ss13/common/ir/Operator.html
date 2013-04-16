@@ -8,9 +8,31 @@
 <div class="sourceContainer">
 <pre><span class="sourceLineNo">001</span>package swp_compiler_ss13.common.ir;<a name="line.1"></a>
 <span class="sourceLineNo">002</span><a name="line.2"></a>
-<span class="sourceLineNo">003</span>public enum Operator {<a name="line.3"></a>
-<span class="sourceLineNo">004</span><a name="line.4"></a>
-<span class="sourceLineNo">005</span>}<a name="line.5"></a>
+<span class="sourceLineNo">003</span>/**<a name="line.3"></a>
+<span class="sourceLineNo">004</span> * Operators of three address code<a name="line.4"></a>
+<span class="sourceLineNo">005</span> * <a name="line.5"></a>
+<span class="sourceLineNo">006</span> * @author "Frank Zechert", "Danny Maasch"<a name="line.6"></a>
+<span class="sourceLineNo">007</span> * @version 1<a name="line.7"></a>
+<span class="sourceLineNo">008</span> * @see &lt;a target="_top" href="https://github.com/swp-uebersetzerbau-ss13/common/wiki/Three-Address-Code-Specification"&gt;Three-Address-Code-Specification Wiki&lt;/a&gt;<a name="line.8"></a>
+<span class="sourceLineNo">009</span> * @see &lt;a target="_top" href="https://github.com/swp-uebersetzerbau-ss13/common/issues/2"&gt;Three-Address-Code-Specification Tracker&lt;/a&gt;<a name="line.9"></a>
+<span class="sourceLineNo">010</span> */<a name="line.10"></a>
+<span class="sourceLineNo">011</span>public enum Operator {<a name="line.11"></a>
+<span class="sourceLineNo">012</span>        DECL,<a name="line.12"></a>
+<span class="sourceLineNo">013</span>        <a name="line.13"></a>
+<span class="sourceLineNo">014</span>        // Arithmetics<a name="line.14"></a>
+<span class="sourceLineNo">015</span>        COPY_NUM,<a name="line.15"></a>
+<span class="sourceLineNo">016</span>        COPY_REAL,<a name="line.16"></a>
+<span class="sourceLineNo">017</span>        UNARY_MINUS_NUM,<a name="line.17"></a>
+<span class="sourceLineNo">018</span>        UNARY_MINUS_REAL,<a name="line.18"></a>
+<span class="sourceLineNo">019</span>        ADD_NUM,<a name="line.19"></a>
+<span class="sourceLineNo">020</span>        ADD_REAL,<a name="line.20"></a>
+<span class="sourceLineNo">021</span>        SUB_NUM,<a name="line.21"></a>
+<span class="sourceLineNo">022</span>        SUB_REAL,<a name="line.22"></a>
+<span class="sourceLineNo">023</span>        MULT_NUM,<a name="line.23"></a>
+<span class="sourceLineNo">024</span>        MULT_REAL,<a name="line.24"></a>
+<span class="sourceLineNo">025</span>        DIV_NUM,<a name="line.25"></a>
+<span class="sourceLineNo">026</span>        DIV_REAL<a name="line.26"></a>
+<span class="sourceLineNo">027</span>}<a name="line.27"></a>
 
 
 
