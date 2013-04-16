@@ -19,7 +19,7 @@ public abstract class Type {
 	 * Returns the width of this type in bytes.
 	 * @return Number of bytes for this type.
 	 */
-	public long getWidth() {
+	public Long getWidth() {
 		return this.width;
 	}
 	

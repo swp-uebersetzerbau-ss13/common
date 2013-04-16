@@ -40,7 +40,7 @@ public class ArrayType extends Type {
 	 * Return the number of elements this array can store.
 	 * @return
 	 */
-	public int getLength() {
+	public Integer getLength() {
 		return this.length;
 	}
 	
