@@ -38,7 +38,7 @@ public class ArrayType extends Type {
 	
 	/**
 	 * Return the number of elements this array can store.
-	 * @return
+	 * @return The length of this array (number of elements).
 	 */
 	public Integer getLength() {
 		return this.length;

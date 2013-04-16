@@ -1,3 +1,4 @@
 swp_compiler_ss13.common.ir
+swp_compiler_ss13.common.optimization
 swp_compiler_ss13.common.parser
 swp_compiler_ss13.common.types
