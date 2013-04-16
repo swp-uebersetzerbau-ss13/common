@@ -13,7 +13,7 @@ public class StructType extends Type {
 	/**
 	 * The member types in order.
 	 */
-	protected Type[] memberTypes;
+	protected MemberType[] memberTypes;
 	
 	/**
 	 * The name of the struct type.
@@ -23,18 +23,18 @@ public class StructType extends Type {
 	/**
 	 * Create a new struct type.
 	 * @param typeName The name of this type.
-	 * @param types The member types.
+	 * @param memberTypes The member types.
 	 */
-	public StructType(String typeName, Type... types) {
-		if (types.length <= 0) {
+	public StructType(String typeName, MemberType... memberTypes) {
+		if (memberTypes.length <= 0) {
 			throw new IllegalArgumentException("A struct needs to have at least one member.");
 		}
 		this.name = typeName;
-		this.memberTypes = types;
+		this.memberTypes = memberTypes;
 
 		this.width = 0L;
-		for (Type member : types) {
-			this.width += member.width;
+		for (MemberType member : memberTypes) {
+			this.width += member.type.width;
 		}
 	}
 	
@@ -42,7 +42,7 @@ public class StructType extends Type {
 	 * Return the member types.
 	 * @return The member types of this struct.
 	 */
-	public Type[] memberTypes() {
+	public MemberType[] memberTypes() {
 		return this.memberTypes;
 	}
 	
@@ -60,7 +60,7 @@ public class StructType extends Type {
 	@Override 
 	public String toString() {
 		StringBuilder typelist = new StringBuilder();
-		for(Type member : this.memberTypes) {
+		for(MemberType member : this.memberTypes) {
 			typelist.append(member.toString());
 			typelist.append(", ");
 		}

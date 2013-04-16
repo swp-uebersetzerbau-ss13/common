@@ -21,7 +21,7 @@
 <span class="sourceLineNo">013</span>        /**<a name="line.13"></a>
 <span class="sourceLineNo">014</span>         * The member types in order.<a name="line.14"></a>
 <span class="sourceLineNo">015</span>         */<a name="line.15"></a>
-<span class="sourceLineNo">016</span>        protected Type[] memberTypes;<a name="line.16"></a>
+<span class="sourceLineNo">016</span>        protected MemberType[] memberTypes;<a name="line.16"></a>
 <span class="sourceLineNo">017</span>        <a name="line.17"></a>
 <span class="sourceLineNo">018</span>        /**<a name="line.18"></a>
 <span class="sourceLineNo">019</span>         * The name of the struct type.<a name="line.19"></a>
@@ -31,18 +31,18 @@
 <span class="sourceLineNo">023</span>        /**<a name="line.23"></a>
 <span class="sourceLineNo">024</span>         * Create a new struct type.<a name="line.24"></a>
 <span class="sourceLineNo">025</span>         * @param typeName The name of this type.<a name="line.25"></a>
-<span class="sourceLineNo">026</span>         * @param types The member types.<a name="line.26"></a>
+<span class="sourceLineNo">026</span>         * @param memberTypes The member types.<a name="line.26"></a>
 <span class="sourceLineNo">027</span>         */<a name="line.27"></a>
-<span class="sourceLineNo">028</span>        public StructType(String typeName, Type... types) {<a name="line.28"></a>
-<span class="sourceLineNo">029</span>                if (types.length &lt;= 0) {<a name="line.29"></a>
+<span class="sourceLineNo">028</span>        public StructType(String typeName, MemberType... memberTypes) {<a name="line.28"></a>
+<span class="sourceLineNo">029</span>                if (memberTypes.length &lt;= 0) {<a name="line.29"></a>
 <span class="sourceLineNo">030</span>                        throw new IllegalArgumentException("A struct needs to have at least one member.");<a name="line.30"></a>
 <span class="sourceLineNo">031</span>                }<a name="line.31"></a>
 <span class="sourceLineNo">032</span>                this.name = typeName;<a name="line.32"></a>
-<span class="sourceLineNo">033</span>                this.memberTypes = types;<a name="line.33"></a>
+<span class="sourceLineNo">033</span>                this.memberTypes = memberTypes;<a name="line.33"></a>
 <span class="sourceLineNo">034</span><a name="line.34"></a>
 <span class="sourceLineNo">035</span>                this.width = 0L;<a name="line.35"></a>
-<span class="sourceLineNo">036</span>                for (Type member : types) {<a name="line.36"></a>
-<span class="sourceLineNo">037</span>                        this.width += member.width;<a name="line.37"></a>
+<span class="sourceLineNo">036</span>                for (MemberType member : memberTypes) {<a name="line.36"></a>
+<span class="sourceLineNo">037</span>                        this.width += member.type.width;<a name="line.37"></a>
 <span class="sourceLineNo">038</span>                }<a name="line.38"></a>
 <span class="sourceLineNo">039</span>        }<a name="line.39"></a>
 <span class="sourceLineNo">040</span>        <a name="line.40"></a>
@@ -50,7 +50,7 @@
 <span class="sourceLineNo">042</span>         * Return the member types.<a name="line.42"></a>
 <span class="sourceLineNo">043</span>         * @return The member types of this struct.<a name="line.43"></a>
 <span class="sourceLineNo">044</span>         */<a name="line.44"></a>
-<span class="sourceLineNo">045</span>        public Type[] memberTypes() {<a name="line.45"></a>
+<span class="sourceLineNo">045</span>        public MemberType[] memberTypes() {<a name="line.45"></a>
 <span class="sourceLineNo">046</span>                return this.memberTypes;<a name="line.46"></a>
 <span class="sourceLineNo">047</span>        }<a name="line.47"></a>
 <span class="sourceLineNo">048</span>        <a name="line.48"></a>
@@ -68,7 +68,7 @@
 <span class="sourceLineNo">060</span>        @Override <a name="line.60"></a>
 <span class="sourceLineNo">061</span>        public String toString() {<a name="line.61"></a>
 <span class="sourceLineNo">062</span>                StringBuilder typelist = new StringBuilder();<a name="line.62"></a>
-<span class="sourceLineNo">063</span>                for(Type member : this.memberTypes) {<a name="line.63"></a>
+<span class="sourceLineNo">063</span>                for(MemberType member : this.memberTypes) {<a name="line.63"></a>
 <span class="sourceLineNo">064</span>                        typelist.append(member.toString());<a name="line.64"></a>
 <span class="sourceLineNo">065</span>                        typelist.append(", ");<a name="line.65"></a>
 <span class="sourceLineNo">066</span>                }<a name="line.66"></a>
