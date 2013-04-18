@@ -1,27 +1,32 @@
-package swp_compiler_ss13.common.types;
+package swp_compiler_ss13.common.types.primitive;
+
+import swp_compiler_ss13.common.types.Type;
 
 /**
- * Basic type definitions.
- * 
+ * Primitive type definition.
+ *
  * @author "Frank Zechert", "Danny Maasch"
  * @version 1
  * @see <a target="_top" href="https://github.com/swp-uebersetzerbau-ss13/common/wiki/Types">Types Wiki</a>
  * @see <a target="_top" href="https://github.com/swp-uebersetzerbau-ss13/common/issues/8">Types Issue Tracker</a>
  */
-public abstract class BasicType extends Type {
+public abstract class PrimitiveType extends Type
+{
 
 	/**
 	 * {@inheritDoc}
 	 */
-	public String getTypeName() {
+	public String getTypeName()
+	{
 		return this.getClass().getSimpleName();
 	}
-	
+
 	/**
 	 * {@inheritDoc}
 	 */
 	@Override
-	public String toString() {
+	public String toString()
+	{
 		return this.getClass().getSimpleName();
 	}
 }

@@ -1,19 +1,23 @@
-package swp_compiler_ss13.common.types;
+package swp_compiler_ss13.common.types.primitive;
+
+import swp_compiler_ss13.common.types.Type;
 
 /**
  * Boolean type definition.
- * 
+ *
  * @author "Frank Zechert", "Danny Maasch"
  * @version 1
  * @see <a target="_top" href="https://github.com/swp-uebersetzerbau-ss13/common/wiki/Types">Types Wiki</a>
  * @see <a target="_top" href="https://github.com/swp-uebersetzerbau-ss13/common/issues/8">Types Issue Tracker</a>
  */
-public class BooleanType extends BasicType {
-	
+public class BooleanType extends PrimitiveType
+{
+
 	/**
 	 * Create a new boolean type
 	 */
-	public BooleanType() {
+	public BooleanType()
+	{
 		this.width = 1L;
 	}
 }

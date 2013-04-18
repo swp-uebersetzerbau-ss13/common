@@ -1,14 +1,14 @@
 package swp_compiler_ss13.common.ir;
 
 /**
- * Operators of three address code
+ * Operators of the three address code
  *
  * @author "Frank Zechert", "Danny Maasch"
  * @version 1
  * @see <a target="_top" href="https://github.com/swp-uebersetzerbau-ss13/common/wiki/Three-Address-Code-Specification">Three-Address-Code-Specification Wiki</a>
  * @see <a target="_top" href="https://github.com/swp-uebersetzerbau-ss13/common/issues/2">Three-Address-Code-Specification Tracker</a>
  */
-public enum Operators
+public enum Operator
 {
 	/* Variable declaration */
 	DECLARE,

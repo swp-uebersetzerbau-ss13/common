@@ -18,7 +18,7 @@
 
 	<!-- Target: build -->
 	<target name="build" depends="clean">
-		<javac srcdir="${src.dir}" destdir="${bin.dir}" classpathref="classpath" />
+		<javac srcdir="${src.dir}" destdir="${bin.dir}" classpathref="classpath" includeantruntime="false"/>
 	</target>
 
 	<!-- Target: doc -->
