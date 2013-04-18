@@ -2,7 +2,7 @@ package swp_compiler_ss13.common.ir;
 
 /**
  * Proposed interface for intermediate code generator.
- * 
+ *
  * @author "Frank Zechert", "Danny Maasch"
  * @version 1
  * @see <a target="_top" href=
@@ -26,7 +26,7 @@ public class Quadruple {
 
 	/**
 	 * Creates a new Quadruple.
-	 * 
+	 *
 	 * @param operator
 	 *            The operator of this quadruple.
 	 * @param argument1
@@ -36,8 +36,10 @@ public class Quadruple {
 	 * @param result
 	 *            Address 3 of the three address code.
 	 */
-	public Quadruple(Operator operator, Address argument1, Address argument2,
-			Address result) {
+	public Quadruple(Operator operator,
+	                 Address argument1,
+	                 Address argument2,
+	                 Address result) {
 		this.operator = operator;
 		this.argument1 = argument1;
 		this.argument2 = argument2;
@@ -46,7 +48,7 @@ public class Quadruple {
 
 	/**
 	 * Get the operator of this quadruple
-	 * 
+	 *
 	 * @return The operator of this quadruple
 	 */
 	public Operator getOperator() {
@@ -55,7 +57,7 @@ public class Quadruple {
 
 	/**
 	 * Get the first address of this quadruple
-	 * 
+	 *
 	 * @return The first address of this quadruple
 	 */
 	public Address getArgument1() {
@@ -64,7 +66,7 @@ public class Quadruple {
 
 	/**
 	 * Get the second address of this quadruple
-	 * 
+	 *
 	 * @return The second address of this quadruple
 	 */
 	public Address getArgument2() {
@@ -73,7 +75,7 @@ public class Quadruple {
 
 	/**
 	 * Get the third address of this quadruple
-	 * 
+	 *
 	 * @return The third address of this quadruple
 	 */
 	public Address getResult() {
