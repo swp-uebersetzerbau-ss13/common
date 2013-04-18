@@ -59,4 +59,10 @@ public interface SymbolTable {
 	 * @return The liveliness information or null if none.
 	 */
 	public Liveliness getLivelinessInformation(String identifier);
+	
+    /**
+     * Get the next free temporary name.
+     * @return the next free temporary name
+     */
+    public String getNextFreeTemporary();
 }
