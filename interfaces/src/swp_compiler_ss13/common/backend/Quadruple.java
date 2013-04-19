@@ -1,9 +1,6 @@
-package swp_compiler_ss13.common.ir.backend;
+package swp_compiler_ss13.common.backend;
 
-import java.io.OutputStream;
-import java.util.List;
-
-interface Quadruple
+public interface Quadruple
 {
 	Operator getOperator();
 	String   getArgument1();
@@ -12,7 +9,7 @@ interface Quadruple
 
 	/* Should print the Quadruple as a String */
 	String toString();
-	
+
 	public enum Operator
 	{
 		/* Variable declaration */
@@ -44,9 +41,4 @@ interface Quadruple
 		/* Control flow */
 		RETURN
 	}
-}
-
-interface Backend
-{
-	void generateTargetCode(List<Quadruple> tac, OutputStream output);
 }

@@ -1,6 +1,7 @@
 package swp_compiler_ss13.common.ir;
 
 import swp_compiler_ss13.common.parser.AST;
+import swp_compiler_ss13.common.backend.Quadruple;
 
 /**
  * Proposed interface for intermediate code generator.
