@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="12.0">
+  <zoom_level>18</zoom_level>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>1170</x>
+      <y>162</y>
+      <w>180</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;enum&gt;&gt;
+Operator</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>144</x>
+      <y>108</y>
+      <w>846</w>
+      <h>414</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+Quadruple
+--
+-operator: Operator
+-argument1: String
+-argument2: String
+-result: String
+--
++getOperator(): Operator
++getArgument1(): String
++getArgument2(): String
++getResult(): String
++toString():String</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>936</x>
+      <y>162</y>
+      <w>270</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m1=0..*
+m2=1</panel_attributes>
+    <additional_attributes>54;54;234;54</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>144</x>
+      <y>558</y>
+      <w>936</w>
+      <h>216</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+Backend
+--
++generateTargetCode(tac: List&lt;Quadruple&gt;, out: OutputStream): void</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
