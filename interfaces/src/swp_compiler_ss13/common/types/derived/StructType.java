@@ -89,6 +89,7 @@ public class StructType extends Type
 	 */
 	public StructType(String typeName, Member... members)
 	{
+		super(Kind.STRUCT);
 		if (members.length <= 0)
 		{
 			throw new IllegalArgumentException("A struct needs to have at least one member.");

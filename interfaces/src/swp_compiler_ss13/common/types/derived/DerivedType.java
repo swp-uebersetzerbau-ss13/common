@@ -13,6 +13,11 @@ import swp_compiler_ss13.common.types.Type;
 public abstract class DerivedType extends Type
 {
 
+	protected DerivedType(Kind kind)
+	{
+		super(kind);
+	}
+
 	/**
 	 * {@inheritDoc}
 	 */

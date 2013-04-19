@@ -29,6 +29,7 @@ public class ArrayType extends DerivedType
 	 */
 	public ArrayType(Type type, int length)
 	{
+		super(Kind.ARRAY);
 		if(length < 0)
 		{
 			throw new NegativeArraySizeException(

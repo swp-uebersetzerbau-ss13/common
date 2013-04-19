@@ -18,6 +18,7 @@ public class StringType extends PrimitiveType
 	 */
 	public StringType(Long max_length)
 	{
+		super(Kind.STRING);
 		this.width = max_length;
 	}
 

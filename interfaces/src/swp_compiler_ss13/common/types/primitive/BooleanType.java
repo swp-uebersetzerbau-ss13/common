@@ -18,6 +18,7 @@ public class BooleanType extends PrimitiveType
 	 */
 	public BooleanType()
 	{
+		super(Kind.BOOLEAN);
 		this.width = 1L;
 	}
 }

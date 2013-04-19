@@ -16,7 +16,9 @@ public class LongType extends PrimitiveType
 	/**
 	 * Create a new long type
 	 */
-	public LongType() {
+	public LongType()
+	{
+		super(Kind.LONG);
 		this.width = 8L;
 	}
 }

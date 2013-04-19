@@ -10,11 +10,33 @@ package swp_compiler_ss13.common.types;
  */
 public abstract class Type
 {
+	public enum Kind
+	{
+		/* Primitive types */
+		LONG,
+		DOUBLE,
+		BOOLEAN,
+		STRING,
+
+		/* Derived types */
+		ARRAY,
+		STRUCT
+	}
 
 	/**
 	 * Width of this type in bytes.
 	 */
 	protected Long width;
+
+	/**
+	 * Kind of this type.
+	 */
+	protected final Kind kind;
+
+	protected Type(Kind kind)
+	{
+		this.kind = kind;
+    }
 
 	/**
 	 * Returns the width of this type in bytes.
@@ -23,6 +45,15 @@ public abstract class Type
 	public Long getWidth()
 	{
 		return this.width;
+	}
+
+	/**
+	 * Returns the kind of this type.
+	 * @return Kind of this type.
+	 */
+	public Kind getKind()
+	{
+		return this.kind;
 	}
 
 	/**

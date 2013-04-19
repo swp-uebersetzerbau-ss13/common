@@ -13,6 +13,11 @@ import swp_compiler_ss13.common.types.Type;
 public abstract class PrimitiveType extends Type
 {
 
+	protected PrimitiveType(Kind kind)
+	{
+		super(kind);
+	}
+
 	/**
 	 * {@inheritDoc}
 	 */

@@ -18,6 +18,7 @@ public class DoubleType extends PrimitiveType
 	 */
 	public DoubleType()
 	{
+		super(Kind.DOUBLE);
 		this.width = 8L;
 	}
 }
