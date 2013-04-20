@@ -33,8 +33,8 @@ public interface Quadruple
 		ADD_DOUBLE,
 		SUB_LONG,
 		SUB_DOUBLE,
-		MULT_LONG,
-		MULT_DOUBLE,
+		MUL_LONG,
+		MUL_DOUBLE,
 		DIV_LONG,
 		DIV_DOUBLE,
 
