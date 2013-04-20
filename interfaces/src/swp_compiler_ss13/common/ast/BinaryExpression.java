@@ -19,4 +19,5 @@ public abstract class BinaryExpression extends Expression {
     public Expression getRightOperand() {
         return _rightOperand;
     }
+    
 }
