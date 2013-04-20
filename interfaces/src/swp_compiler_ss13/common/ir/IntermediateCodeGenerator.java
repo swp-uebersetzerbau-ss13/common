@@ -1,7 +1,7 @@
 package swp_compiler_ss13.common.ir;
 
-import swp_compiler_ss13.common.parser.AST;
 import swp_compiler_ss13.common.backend.Quadruple;
+import swp_compiler_ss13.common.parser.AST;
 
 /**
  * Proposed interface for intermediate code generator.
@@ -15,7 +15,8 @@ import swp_compiler_ss13.common.backend.Quadruple;
  *      href="https://github.com/swp-uebersetzerbau-ss13/common/issues/1"
  *      >Intermediate Code Generator Issue Tracker</a>
  */
-public interface IntermediateCodeGenerator {
+public interface IntermediateCodeGenerator
+{
 
 	/**
 	 * Generates quadruple representation of three address code from the correct
@@ -26,6 +27,6 @@ public interface IntermediateCodeGenerator {
 	 * @throws IntermediateCodeGeneratorException
 	 *             Thrown if an error occurs.
 	 */
-	public Quadruple[] generateIntermediateCode(AST ast)
+	public List<Quadruple> generateIntermediateCode(AST ast)
 			throws IntermediateCodeGeneratorException;
 }
