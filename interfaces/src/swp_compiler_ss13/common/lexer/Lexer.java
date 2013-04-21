@@ -1,7 +1,7 @@
 package swp_compiler_ss13.common.lexer;
 
 /**
- * Proposed interface for symbol table
+ * Proposed interface for lexer
  * 
  * @author "Damla Durmaz", "Ferhat Beyaz", "Sebastian Barthel"
  * @version 1
