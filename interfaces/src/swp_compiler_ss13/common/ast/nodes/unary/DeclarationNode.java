@@ -1,5 +1,6 @@
-package swp_compiler_ss13.common.ast;
+package swp_compiler_ss13.common.ast.nodes.unary;
 
+import swp_compiler_ss13.common.ast.ASTNode;
 import swp_compiler_ss13.common.types.Type;
 
 public interface DeclarationNode extends ASTNode

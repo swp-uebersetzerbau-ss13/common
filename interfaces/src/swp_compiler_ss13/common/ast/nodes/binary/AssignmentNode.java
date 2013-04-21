@@ -1,4 +1,7 @@
-package swp_compiler_ss13.common.ast;
+package swp_compiler_ss13.common.ast.nodes.binary;
+
+import swp_compiler_ss13.common.ast.nodes.IdentifierNode;
+import swp_compiler_ss13.common.ast.nodes.StatementNode;
 
 public interface AssignmentNode extends StatementNode
 {

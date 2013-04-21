@@ -1,5 +1,6 @@
-package swp_compiler_ss13.common.ast;
+package swp_compiler_ss13.common.ast.nodes.leaf;
 
+import swp_compiler_ss13.common.ast.nodes.ExpressionNode;
 import swp_compiler_ss13.common.types.Type;
 
 public interface LiteralNode extends ExpressionNode

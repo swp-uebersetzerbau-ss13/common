@@ -34,7 +34,11 @@ public interface ASTNode
 
 	public Integer getNumberOfNodes();
 
-	public List<ASTNode> getNodeList();
+	public Iterator<ASTNode> getDFSLTRNodeIterator();
 
-	public Iterator<ASTNode> getLTRNodeIterator();
+	public List<ASTNode> getChildren();
+
+	public ASTNode getParentNode();
+
+	public void setParentNode(ASTNode node);
 }

@@ -1,4 +1,6 @@
-package swp_compiler_ss13.common.ast;
+package swp_compiler_ss13.common.ast.nodes.unary;
+
+import swp_compiler_ss13.common.ast.nodes.ExpressionNode;
 
 public interface UnaryExpressionNode extends ExpressionNode
 {

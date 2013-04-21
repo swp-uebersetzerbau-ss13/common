@@ -1,8 +1,11 @@
-package swp_compiler_ss13.common.ast;
+package swp_compiler_ss13.common.ast.nodes.marynary;
 
 import java.util.Iterator;
 import java.util.List;
 
+import swp_compiler_ss13.common.ast.ASTNode;
+import swp_compiler_ss13.common.ast.nodes.StatementNode;
+import swp_compiler_ss13.common.ast.nodes.unary.DeclarationNode;
 import swp_compiler_ss13.common.parser.SymbolTable;
 
 public interface BlockNode extends ASTNode
