@@ -11,7 +11,7 @@ public interface Lexer {
 	
 	/**
 	 * Get the next token of the source code. If there is no token, this method returns null.
-	 * @return A Token, representing the next valid lexeme of the source code
+	 * @return A Token, representing the next valid lexeme
 	 */
 	public Token getNextToken();
 	
