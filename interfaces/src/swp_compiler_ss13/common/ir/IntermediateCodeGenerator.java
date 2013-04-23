@@ -3,7 +3,7 @@ package swp_compiler_ss13.common.ir;
 import java.util.List;
 
 import swp_compiler_ss13.common.backend.Quadruple;
-import swp_compiler_ss13.common.parser.AST;
+import swp_compiler_ss13.common.ast.AST;;;
 
 /**
  * Proposed interface for intermediate code generator.
