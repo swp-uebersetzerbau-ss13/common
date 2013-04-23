@@ -32,7 +32,7 @@ public interface AssignmentNode extends StatementNode
 	 * The right value of this node. The right value is a statement of any kind.
 	 * The right value is the value to assign to the left value.
 	 * 
-	 * @return
+	 * @return the identifier of this assignment.
 	 */
 	public StatementNode getRightValue();
 
