@@ -6,6 +6,8 @@ public interface Quadruple
 	String   getArgument1();
 	String   getArgument2();
 	String   getResult();
+	
+	static final String EmptyArgument = "!";
 
 	/* Should print the Quadruple as a String */
 	String toString();
