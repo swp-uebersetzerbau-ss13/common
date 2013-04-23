@@ -15,7 +15,7 @@ public interface Quadruple
 		/* Variable declaration */
 		DECLARE_LONG,
 		DECLARE_DOUBLE,
-		DECLARE_BOOL,
+		DECLARE_BOOLEAN,
 		DECLARE_STRING,
 
 		/* Type conversion */
@@ -25,7 +25,7 @@ public interface Quadruple
 		/* Unindexed copy */
 		ASSIGN_LONG,
 		ASSIGN_DOUBLE,
-		ASSIGN_BOOL,
+		ASSIGN_BOOLEAN,
 		ASSIGN_STRING,
 
 		/* Arithmetic */
@@ -33,8 +33,8 @@ public interface Quadruple
 		ADD_DOUBLE,
 		SUB_LONG,
 		SUB_DOUBLE,
-		MULT_LONG,
-		MULT_DOUBLE,
+		MUL_LONG,
+		MUL_DOUBLE,
 		DIV_LONG,
 		DIV_DOUBLE,
 
