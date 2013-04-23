@@ -3,42 +3,103 @@ package swp_compiler_ss13.common.ast;
 import java.util.Iterator;
 import java.util.List;
 
+/**
+ * A node in the AST. Every node in the AST is of the type ASTNode. Though there
+ * are a lot of specialized nodes.
+ * 
+ * @author "Frank Zechert"
+ * @version 1
+ */
 public interface ASTNode
 {
+	/**
+	 * This enumeration is used to assign node types to the specialized nodes.
+	 * This enumerations enables you to use a switch case statement to
+	 * distinguish between the nodes instead of using the instanceof operator in
+	 * a lot of if statements.
+	 * 
+	 * @author "Frank Zechert"
+	 * @version 1
+	 */
 	public enum ASTNodeType
 	{
-		ArithmeticBinaryExpression,
-		ArithmeticUnaryExpression,
-		AssignmentNode,
-		ASTNode,
-		BinaryExpression,
-		BlockNode,
-		BranchNode,
+		// leaf nodes
+		BasicIdentifierNode,
 		BreakNode,
-		DeclarationNode,
-		DoWhileNode,
-		ExpressionNode,
-		IdentifierNode,
 		LiteralNode,
-		LogicBinaryExpression,
-		LogicUnaryExpression,
-		LoopNode,
+
+		// unary nodes
+		ArithmeticUnaryExpressionNode,
+		ArrayIdentifierNode,
+		DeclarationNode,
+		LogicUnaryExpressionNode,
 		PrintNode,
 		ReturnNode,
-		StatementNode,
-		UnaryExpression,
-		WhileNode
+		StructIdentifierNode,
+
+		// binary nodes
+		ArithmeticBinaryExpressionNode,
+		AssignmentNode,
+		DoWhileNode,
+		LogicBinaryExpressionNode,
+		RelationExpressionNode,
+		WhileNode,
+
+		// ternay nodes
+		BranchNode,
+
+		// m-ary n-ary nodes
+		BlockNode
 	}
 
+	/**
+	 * Return the type of this node. This is one of the ASTNodeType enumeration
+	 * constants. Each node needs to return the correct enumeration constant.
+	 * 
+	 * @return the type of the node.
+	 */
 	public ASTNodeType getNodeType();
 
+	/**
+	 * Return the number of nodes that are in this node's subtree. This is the
+	 * number of nodes following this node. The number of nodes contains this
+	 * node as well.
+	 * 
+	 * @return the number of nodes.
+	 */
 	public Integer getNumberOfNodes();
 
+	/**
+	 * Get the Depth-First-Search Left-To-Right (DFSLTR) iterator for the
+	 * subtree this node is the root of.
+	 * 
+	 * @return the DFSLTR iterator.
+	 */
 	public Iterator<ASTNode> getDFSLTRNodeIterator();
 
+	/**
+	 * Get all the children of this node. These are the nodes directly following
+	 * on the next level of the tree which parent is this node.
+	 * 
+	 * @return the children of this node.
+	 */
 	public List<ASTNode> getChildren();
 
+	/**
+	 * Get the parent node of this node. If this node is the root node and no
+	 * parent exist, this should return null.
+	 * 
+	 * @return the parent node or null if no parent exists (this is a root
+	 *         node).
+	 */
 	public ASTNode getParentNode();
 
+	/**
+	 * Set the parent node of this node. Root nodes do not have a parent. The
+	 * parent of a root node is null.
+	 * 
+	 * @param node
+	 *            the node to set as the parent.
+	 */
 	public void setParentNode(ASTNode node);
 }
