@@ -1,54 +1,32 @@
 package swp_compiler_ss13.common.lexer;
 
-
 /**
- * Proposed class for a token type
+ * Proposed inteface for a token
  * 
- * @author "Damla Durmaz", "Ferhat Beyaz", "Sebastian Barthel"
- * @version 1
+ * @author "Damla Durmaz", "Ferhat Beyaz", "Sebastian Barthel", "Florian Freudenberg"
+ * @version 2
  * @see <a target="_top"
  *      href="https://github.com/swp-uebersetzerbau-ss13/common/issues/3</a>
  */
-enum TokenType
+public interface Token
 {
-
-	NUM("-?[0-9]+"),
-	OP("[*/+-]"),
-	WHITESPACE("[ \t\f\r\n]+");
-
-	public final String pattern;
-
-	private TokenType(String pattern)
-	{
-		this.pattern = pattern;
-	}
-}
-
-/**
- * Proposed class for a token
- * 
- * @author "Damla Durmaz", "Ferhat Beyaz", "Sebastian Barthel"
- * @version 1
- * @see <a target="_top"
- *      href="https://github.com/swp-uebersetzerbau-ss13/common/issues/3</a>
- */
-public class Token
-{
-
-	public TokenType type;
-	public String data;
-	public int line;
-
-	public Token(TokenType type, String data, int line)
-	{
-		this.type = type;
-		this.data = data;
-		this.line = line;
-	}
-
-	@Override
-	public String toString()
-	{
-		return String.format("<%s, '%d','%s'>", type.name(), line, data);
-	}
+	/**
+	 * @return string readed by lexer for this token
+	 */
+	String getValue();
+	
+	/**
+	 * @return type of token
+	 */
+	TokenType getTokenType();
+	
+	/**
+	 * @return line of code in source file
+	 */
+	Integer getLoc();
+	
+	/**
+	 * @return column of code in source file
+	 */
+	Integer getCoc();
 }
