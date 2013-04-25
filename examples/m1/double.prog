@@ -1,0 +1,4 @@
+# returns 0
+long l;
+l = 2.5 + 1 / 4.5;
+return l;
