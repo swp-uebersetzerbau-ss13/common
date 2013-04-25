@@ -23,10 +23,10 @@ public interface Token
 	/**
 	 * @return line of code in source file
 	 */
-	Integer getLoc();
+	Integer getLine();
 	
 	/**
 	 * @return column of code in source file
 	 */
-	Integer getCoc();
+	Integer getColumn();
 }
