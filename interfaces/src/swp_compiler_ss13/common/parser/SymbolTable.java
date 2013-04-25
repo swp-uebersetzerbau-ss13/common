@@ -65,4 +65,11 @@ public interface SymbolTable {
      * @return the next free temporary name
      */
     public String getNextFreeTemporary();
+
+	/**
+	 * Put the identifier into the root symbol table
+	 * @param identifier The identifier to insert into the root symbol table.
+     * @param type The Type of the identifier.
+	 */
+	public void putTemporary(String identifier, Type type);
 }
