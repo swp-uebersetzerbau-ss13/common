@@ -14,5 +14,4 @@ public interface Lexer {
 	 * @return A Token, representing the next valid lexeme
 	 */
 	public Token getNextToken();
-	
 }
