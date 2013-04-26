@@ -16,6 +16,9 @@ public interface Lexer {
 	 * reading. Normally the lexer will read the complete stream till it ends,
 	 * but this is not guaranteed.
 	 * 
+	 * After every call to this method, the lexer behaves as if after the first
+	 * call.
+	 * 
 	 * @param stream
 	 */
 	public void setSourceStream(InputStream stream);
@@ -26,6 +29,15 @@ public interface Lexer {
 	 * 
 	 * If there are no characters left for tokenization it always returns a
 	 * EOF-token.
+	 * 
+	 * For all minimal sequences of characters which are not matched by a
+	 * token definition, the lexer returns these as NOT_A_TOKEN-tokens, eg:
+	 * 3 + $$$$ 4 2w
+	 * would result in:
+	 * <NUM, '3'> <PLUS, '+'> <NOT_A_TOKEN, '$$$$'> <NUM, '4'> <NOT_A_TOKEN, '2w'>
+	 * 
+	 * Note that whitespaces are ignored but are essentially for token split. 
+	 * This means '2w' may not be parsed as <NUM, '2'> <ID, 'w'>.
 	 * 
 	 * @return a token instance
 	 */

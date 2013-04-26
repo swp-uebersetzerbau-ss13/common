@@ -1,10 +1,11 @@
 package swp_compiler_ss13.common.lexer;
 
 /**
- * Proposed class for a token type
+ * TokenType defines the specific meaning of a token.
  * 
- * @author "Damla Durmaz", "Ferhat Beyaz", "Sebastian Barthel", "Florian Freudenberg"
- * @version 2
+ * @author "Damla Durmaz", "Ferhat Beyaz", "Sebastian Barthel", 
+ *         "Florian Freudenberg"
+ * @version 3
  * @see <a target="_top"
  *      href="https://github.com/swp-uebersetzerbau-ss13/common/issues/3</a>
  */
@@ -147,7 +148,8 @@ enum TokenType
 	 */
 	EOF,
 	/**
-	 * Lexer can not identifiy token
+	 * Type for untokenizable sequences of characters and signals problems to 
+	 * the parser.
 	 */
 	NOT_A_TOKEN;
 }

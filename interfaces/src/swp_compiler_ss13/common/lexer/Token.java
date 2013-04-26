@@ -1,10 +1,12 @@
 package swp_compiler_ss13.common.lexer;
 
 /**
- * Proposed inteface for a token
+ * Token are typed sequences of input characters with a specific meaning for a 
+ * grammar.
  * 
- * @author "Damla Durmaz", "Ferhat Beyaz", "Sebastian Barthel", "Florian Freudenberg"
- * @version 2
+ * @author "Damla Durmaz", "Ferhat Beyaz", "Sebastian Barthel", 
+ *         "Florian Freudenberg"
+ * @version 3
  * @see <a target="_top"
  *      href="https://github.com/swp-uebersetzerbau-ss13/common/issues/3</a>
  */

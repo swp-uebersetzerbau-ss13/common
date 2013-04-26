@@ -25,6 +25,8 @@ public interface Parser {
 	 * Starts the parsing process for the source file associated with the
 	 * defined lexer.
 	 * 
+	 * This assumes that Lexer and ReportLog are setted and usable.
+	 * 
 	 * @return a well-formed AST
 	 */
 	AST getParsedAST();

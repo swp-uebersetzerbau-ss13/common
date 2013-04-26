@@ -6,7 +6,8 @@ package swp_compiler_ss13.common.parser;
 public interface ReportLog {
 	
 	/**
-	 * reportError adds a new error to the ReportLog
+	 * ReportError adds a new error to the ReportLog. This method never
+	 * throw an exception.
 	 * 
 	 * @param text part of source which cause the error
 	 * @param line 
