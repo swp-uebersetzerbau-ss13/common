@@ -10,19 +10,19 @@
 	<!-- Target: clean -->
 	<target name="clean">
 		<delete dir="${bin.dir}" />
-		<mkdir dir="${bin.dir}" />
 
 		<delete dir="${doc.dir}" />
-		<mkdir dir="${doc.dir}" />
 	</target>
 
 	<!-- Target: build -->
 	<target name="build" depends="clean">
+		<mkdir dir="${bin.dir}" />
 		<javac srcdir="${src.dir}" destdir="${bin.dir}" classpathref="classpath" includeantruntime="false"/>
 	</target>
 
 	<!-- Target: doc -->
 	<target name="doc">
+		<mkdir dir="${doc.dir}" />
 		<javadoc
 	    	access="package"
 	    	author="true"
