@@ -58,7 +58,7 @@ public interface BlockNode extends StatementNode
 	 * 
 	 * @return the statement iterator.
 	 */
-	public Iterable<StatementNode> getStatementIterator();
+	public Iterator<StatementNode> getStatementIterator();
 
 	/**
 	 * Get the number of declarations in this block.
