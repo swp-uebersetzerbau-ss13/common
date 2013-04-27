@@ -6,7 +6,7 @@ package swp_compiler_ss13.common.ast.nodes.binary;
  * @author "Frank Zechert"
  * @version 1
  */
-public interface WhileNode
+public interface WhileNode extends LoopNode
 {
 
 }
