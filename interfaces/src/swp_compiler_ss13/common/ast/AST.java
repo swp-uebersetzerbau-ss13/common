@@ -3,6 +3,7 @@ package swp_compiler_ss13.common.ast;
 import java.util.Iterator;
 
 import swp_compiler_ss13.common.parser.SymbolTable;
+import swp_compiler_ss13.common.ast.nodes.marynary.BlockNode;
 
 /**
  * The abstract syntax tree (AST).
@@ -18,7 +19,7 @@ public interface AST
 	 * 
 	 * @return the root node of the AST.
 	 */
-	public ASTNode getRootNode();
+	public BlockNode getRootNode();
 
 	/**
 	 * Set the root node of the AST.
@@ -26,7 +27,7 @@ public interface AST
 	 * @param rootNode
 	 *            The root node.
 	 */
-	public void setRootNode(ASTNode rootNode);
+	public void setRootNode(BlockNode rootNode);
 
 	/**
 	 * Get the number of nodes the complete tree contains.
