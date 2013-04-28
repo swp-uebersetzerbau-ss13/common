@@ -142,7 +142,7 @@ enum TokenType
 	/**
 	 * ';'
 	 */
-	SIMICOLON,
+	SEMICOLON,
 	/**
 	 * End of file
 	 */
