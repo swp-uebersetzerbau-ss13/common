@@ -5,7 +5,7 @@ import java.io.InputStream;
 /**
  * Proposed interface for lexer
  * 
- * @author "Damla Durmaz", "Ferhat Beyaz", "Sebastian Barthel", "Florian Freudenberg"
+ * @author "Damla Durmaz", "Ferhat Beyaz", "Sebastian Barthel"
  * @version 2
  * @see <a target="_top" href="https://github.com/swp-uebersetzerbau-ss13/common/issues/3</a>
  */

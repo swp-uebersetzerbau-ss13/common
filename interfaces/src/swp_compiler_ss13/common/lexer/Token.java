@@ -4,14 +4,12 @@ package swp_compiler_ss13.common.lexer;
  * Token are typed sequences of input characters with a specific meaning for a 
  * grammar.
  * 
- * @author "Damla Durmaz", "Ferhat Beyaz", "Sebastian Barthel", 
- *         "Florian Freudenberg"
+ * @author "Damla Durmaz", "Ferhat Beyaz", "Sebastian Barthel"
  * @version 3
  * @see <a target="_top"
  *      href="https://github.com/swp-uebersetzerbau-ss13/common/issues/3</a>
  */
-public interface Token
-{
+public interface Token {
 	/**
 	 * @return string readed by lexer for this token
 	 */

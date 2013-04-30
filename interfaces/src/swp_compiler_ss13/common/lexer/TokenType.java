@@ -3,14 +3,12 @@ package swp_compiler_ss13.common.lexer;
 /**
  * TokenType defines the specific meaning of a token.
  * 
- * @author "Damla Durmaz", "Ferhat Beyaz", "Sebastian Barthel", 
- *         "Florian Freudenberg"
- * @version 3
+ * @author "Damla Durmaz", "Ferhat Beyaz", "Sebastian Barthel"
+ * @version 4
  * @see <a target="_top"
  *      href="https://github.com/swp-uebersetzerbau-ss13/common/issues/3</a>
  */
-enum TokenType
-{
+public enum TokenType {
 	/**
 	 * '[0-9]+ ((E|e)-?[0-9+]))?'
 	 */
