@@ -149,5 +149,9 @@ public enum TokenType {
 	 * Type for untokenizable sequences of characters and signals problems to 
 	 * the parser.
 	 */
-	NOT_A_TOKEN;
+	NOT_A_TOKEN, 
+	/**
+	 * Type for comments that begins with an '#' and lasts the whole line until \n
+	 */
+	COMMENT;
 }
