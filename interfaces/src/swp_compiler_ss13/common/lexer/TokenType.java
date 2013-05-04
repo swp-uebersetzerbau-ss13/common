@@ -38,6 +38,10 @@ public enum TokenType {
 	 */
 	IF,
 	/**
+	 * 'else
+	 */
+	ELSE,
+	/**
 	 * 'while'
 	 */
 	WHILE,
@@ -57,6 +61,22 @@ public enum TokenType {
 	 * 'print'
 	 */
 	PRINT,
+	/**
+	 * 'long'
+	 */
+	LONG_SYMBOL,
+	/**
+	 * 'double'
+	 */
+	DOUBLE_SYMBOL,
+	/**
+	 * 'bool'
+	 */
+	BOOL_SYMBOL,
+	/**
+	 * 'string'
+	 */
+	STRING_SYMBOL,
 	/**
 	 * '='
 	 */
