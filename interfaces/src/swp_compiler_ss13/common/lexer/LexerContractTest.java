@@ -29,6 +29,14 @@ public abstract class LexerContractTest<L extends Lexer> {
 		assertEquals("EOF should be returns till reinitialization",
 				TokenType.EOF, lexer.getNextToken().getTokenType());
 	}
+	
+	@Test
+	public void withNullInitializedLexerBehavesAsIfNotInitialized() {
+		lexer.setSourceStream(null);
+		assertEquals(TokenType.EOF, lexer.getNextToken().getTokenType());
+		assertEquals("EOF should be returns till reinitialization",
+				TokenType.EOF, lexer.getNextToken().getTokenType());
+	}
 
 	@Test
 	public void emptyStreamInitializedLexerReturnsEofToken() {
@@ -385,6 +393,15 @@ public abstract class LexerContractTest<L extends Lexer> {
 		assertEquals(TokenType.ID, lexer.getNextToken().getTokenType());
 		assertEquals(TokenType.NOT_A_TOKEN, lexer.getNextToken().getTokenType());
 		assertEquals(TokenType.PRINT, lexer.getNextToken().getTokenType());
+		assertEquals(TokenType.EOF, lexer.getNextToken().getTokenType());
+	}
+	
+	@Test
+	public void lexerRecognizeNotATokenAlsoAtEndOfStream() {
+		prepareLexer("not $ $");
+		assertEquals(TokenType.ID, lexer.getNextToken().getTokenType());
+		assertEquals(TokenType.NOT_A_TOKEN, lexer.getNextToken().getTokenType());
+		assertEquals(TokenType.EOF, lexer.getNextToken().getTokenType());
 	}
 
 	@Test
