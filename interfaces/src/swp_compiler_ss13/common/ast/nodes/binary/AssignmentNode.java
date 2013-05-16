@@ -1,7 +1,7 @@
 package swp_compiler_ss13.common.ast.nodes.binary;
 
 import swp_compiler_ss13.common.ast.nodes.IdentifierNode;
-import swp_compiler_ss13.common.ast.nodes.StatementNode;
+import swp_compiler_ss13.common.ast.nodes.ExpressionNode;
 
 /**
  * The node to represent an assignment.
@@ -9,7 +9,7 @@ import swp_compiler_ss13.common.ast.nodes.StatementNode;
  * @author "Frank Zechert"
  * @version 1
  */
-public interface AssignmentNode extends StatementNode
+public interface AssignmentNode extends ExpressionNode
 {
 	/**
 	 * The left value of this node. The left node is an identifier (variable).
