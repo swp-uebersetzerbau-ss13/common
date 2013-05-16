@@ -1,0 +1,21 @@
+# return 5
+# prints nothing
+
+bool b;
+bool c;
+long l;
+
+b = true;
+c = false;
+
+l = 4;
+
+if ( b )
+  if ( c || ! b )
+    print "bla";
+  else
+    l = 5;
+else
+  return l;
+
+return l;
