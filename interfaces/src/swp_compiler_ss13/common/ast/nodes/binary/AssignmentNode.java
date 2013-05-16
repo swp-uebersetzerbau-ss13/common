@@ -2,6 +2,7 @@ package swp_compiler_ss13.common.ast.nodes.binary;
 
 import swp_compiler_ss13.common.ast.nodes.IdentifierNode;
 import swp_compiler_ss13.common.ast.nodes.ExpressionNode;
+import swp_compiler_ss13.common.ast.nodes.StatementNode;
 
 /**
  * The node to represent an assignment.
