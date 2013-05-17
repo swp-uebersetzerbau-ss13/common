@@ -115,7 +115,7 @@ public interface SymbolTable {
      * @param alias The alias to define for the identifier
      * @since 2
      */
-    public void setIdentifierAlias(String identifier, String alias)
+    public void setIdentifierAlias(String identifier, String alias);
 
     /**
      * Get an alias for the identifier from the symbol table.
@@ -125,7 +125,7 @@ public interface SymbolTable {
      * @return Return the alias if any found, return the identifier if no alias was found, return null if the identifier does not exist.
      * @since 2
      */
-    public String getIdentifierAlias(String identifier)
+    public String getIdentifierAlias(String identifier);
 
     /**
      * Returns the SymbolTable that declares the identifier. 
