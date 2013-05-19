@@ -79,16 +79,44 @@ public abstract class LexerContractTest<L extends Lexer> {
 				(token = lexer.getNextToken()).getTokenType());
 		assertTrue(token instanceof NumToken);
 		assertThat(((NumToken) token).getLongValue(), is(12312L));
-		prepareLexer("12312e1");
+		prepareLexer("12312e11");
 		assertEquals(TokenType.NUM,
 				(token = lexer.getNextToken()).getTokenType());
 		assertTrue(token instanceof NumToken);
-		assertThat(((NumToken) token).getLongValue(), is(123120L));
-		prepareLexer("12312E1");
+		assertThat(((NumToken) token).getLongValue(), is(1231200000000000L));
+		prepareLexer("12312E10");
 		assertEquals(TokenType.NUM,
 				(token = lexer.getNextToken()).getTokenType());
 		assertTrue(token instanceof NumToken);
-		assertThat(((NumToken) token).getLongValue(), is(123120L));
+		assertThat(((NumToken) token).getLongValue(), is(123120000000000L));
+	}
+	
+	@Test
+	public void lexerHandlesMultipleMinusInNumAsNotAToken() {
+		prepareLexer("1e--1");
+		assertEquals(TokenType.NOT_A_TOKEN,
+				(lexer.getNextToken()).getTokenType());
+	}
+	
+	@Test
+	public void lexerHandlesMultipleMinusInRealAsNotAToken() {
+		prepareLexer("1.0e--1");
+		assertEquals(TokenType.NOT_A_TOKEN,
+				(lexer.getNextToken()).getTokenType());
+	}
+	
+	@Test
+	public void lexerHandlesMultiplePlusInNumAsNotAToken() {
+		prepareLexer("17e++12");
+		assertEquals(TokenType.NOT_A_TOKEN,
+				(lexer.getNextToken()).getTokenType());
+	}
+	
+	@Test
+	public void lexerHandlesMultiplePlusInRealAsNotAToken() {
+		prepareLexer("1.4e++12");
+		assertEquals(TokenType.NOT_A_TOKEN,
+				(lexer.getNextToken()).getTokenType());
 	}
 
 	@Test
