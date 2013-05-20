@@ -106,20 +106,6 @@ public abstract class LexerContractTest<L extends Lexer> {
 	}
 	
 	@Test
-	public void lexerHandlesMultiplePlusInNumAsNotAToken() {
-		prepareLexer("17e++12");
-		assertEquals(TokenType.NOT_A_TOKEN,
-				(lexer.getNextToken()).getTokenType());
-	}
-	
-	@Test
-	public void lexerHandlesMultiplePlusInRealAsNotAToken() {
-		prepareLexer("1.4e++12");
-		assertEquals(TokenType.NOT_A_TOKEN,
-				(lexer.getNextToken()).getTokenType());
-	}
-
-	@Test
 	public void lexerRecognizeTokenReal() {
 		Token token = null;
 		prepareLexer("12312.0");
