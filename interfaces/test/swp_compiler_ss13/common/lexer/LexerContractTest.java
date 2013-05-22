@@ -341,6 +341,13 @@ public abstract class LexerContractTest<L extends Lexer> {
 	}
 
 	@Test
+	public void lexerRecognizeTokenRecordSymbol() {
+		prepareLexer("record");
+		assertEquals(TokenType.RECORD_SYMBOL, lexer.getNextToken()
+				.getTokenType());
+	}
+
+	@Test
 	public void lexerRecognizeTokenLeftParan() {
 		prepareLexer("(");
 		assertEquals(TokenType.LEFT_PARAN, lexer.getNextToken().getTokenType());
@@ -382,6 +389,12 @@ public abstract class LexerContractTest<L extends Lexer> {
 	public void lexerRecognizeTokenSemicolon() {
 		prepareLexer(";");
 		assertEquals(TokenType.SEMICOLON, lexer.getNextToken().getTokenType());
+	}
+
+	@Test
+	public void lexerRecognizeTokenDot() {
+		prepareLexer(".");
+		assertEquals(TokenType.DOT, lexer.getNextToken().getTokenType());
 	}
 
 	@Test

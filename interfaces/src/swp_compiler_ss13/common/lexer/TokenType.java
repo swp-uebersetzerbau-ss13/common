@@ -78,6 +78,10 @@ public enum TokenType {
 	 */
 	STRING_SYMBOL,
 	/**
+	 * 'record'
+	 */
+	RECORD_SYMBOL,
+	/**
 	 * '='
 	 */
 	ASSIGNOP,
@@ -157,6 +161,10 @@ public enum TokenType {
 	 * '}'
 	 */
 	RIGHT_BRACE,
+	/**
+	 * '.'
+	 */
+	DOT,
 	/**
 	 * ';'
 	 */
