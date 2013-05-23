@@ -2,7 +2,6 @@ package swp_compiler_ss13.common.ast.nodes.ternary;
 
 import swp_compiler_ss13.common.ast.nodes.ExpressionNode;
 import swp_compiler_ss13.common.ast.nodes.StatementNode;
-import swp_compiler_ss13.common.ast.nodes.marynary.BlockNode;
 
 /**
  * The node to represent a branch ("if") statement
@@ -33,14 +32,14 @@ public interface BranchNode extends StatementNode
 	 * @param block
 	 *            The block to execute when the condition evaluates to true.
 	 */
-	public void setBlockNodeOnTrue(BlockNode block);
+	public void setBlockNodeOnTrue(StatementNode block);
 
 	/**
 	 * The block that is executed when the condition evaluates to true.
 	 * 
 	 * @return The block to execute when the condition evaluates to true.
 	 */
-	public BlockNode getBlockNodeOnTrue();
+	public StatementNode getBlockNodeOnTrue();
 
 	/**
 	 * Set the block that is executed when the condition evaluates to flase.
@@ -51,7 +50,7 @@ public interface BranchNode extends StatementNode
 	 *            The block to execute when the condition evaluates to false or
 	 *            an empty block if no else branch is needed.
 	 */
-	public void setBlockNodeOnFalse(BlockNode block);
+	public void setBlockNodeOnFalse(StatementNode block);
 
 	/**
 	 * The block that is executed when the condition is false. This is the else
@@ -59,5 +58,5 @@ public interface BranchNode extends StatementNode
 	 * 
 	 * @return The block to execute when the condition evaluates to false.
 	 */
-	public BlockNode getBlockNodeOnFalse();
+	public StatementNode getBlockNodeOnFalse();
 }
