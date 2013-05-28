@@ -3,11 +3,13 @@ package swp_compiler_ss13.common.ast;
 import java.util.Iterator;
 import java.util.List;
 
+import swp_compiler_ss13.common.lexer.Token;
+
 /**
  * A node in the AST. Every node in the AST is of the type ASTNode. Though there
  * are a lot of specialized nodes.
  * 
- * @author "Frank Zechert"
+ * @author "Frank Zechert, Tilman Krauss"
  * @version 1
  */
 public interface ASTNode
@@ -102,4 +104,16 @@ public interface ASTNode
 	 *            the node to set as the parent.
 	 */
 	public void setParentNode(ASTNode node);
+	
+	/**
+	 * Computes the Range of tokens, whose are represented by this nodes subtree.
+	 * Following properties must hold, if n1, n2 are two nodes and c1,c2 the corresponding coverages:
+	 * c1 includes at least all elements of c2 <=> t2 is in the subtree of t2 or t2 is t1
+	 * c1 includes all elements of c2 and c2 includes all elements of c1 <=> t1 is t2
+	 * Let c' be the concatenation of c1 and c2. c' exists as a valid coverage of a node t' and c1 is the first
+	 * part of the list and c2 the second part if and only if t1 and t2 is in the subtree of t' 
+	 * and t1 has been hitting before t2, if the iteration-policy is depth-first left-to-right. 
+	 * @return tokens, whose are in the subtree of this node.
+	 */
+	public List<Token> coverage();
 }
