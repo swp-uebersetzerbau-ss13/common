@@ -2,6 +2,7 @@ package swp_compiler_ss13.common.parser;
 
 import swp_compiler_ss13.common.ast.AST;
 import swp_compiler_ss13.common.lexer.Lexer;
+import swp_compiler_ss13.common.report.ReportLog;
 
 public interface Parser {
 	
