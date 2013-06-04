@@ -5,6 +5,9 @@ bool b;
 bool c;
 long l;
 
+string bla;
+bla = "bla";
+
 b = true;
 c = false;
 
@@ -14,7 +17,7 @@ l = 4;
 
 if ( b )
   if ( c || ! b )
-    print "bla";
+    print bla;
   else
     l = 5;
 
