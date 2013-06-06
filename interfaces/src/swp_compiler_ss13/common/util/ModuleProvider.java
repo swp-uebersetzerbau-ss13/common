@@ -10,6 +10,7 @@ import swp_compiler_ss13.common.backend.Backend;
 import swp_compiler_ss13.common.ir.IntermediateCodeGenerator;
 import swp_compiler_ss13.common.lexer.Lexer;
 import swp_compiler_ss13.common.parser.Parser;
+import swp_compiler_ss13.common.semanticAnalysis.SemanticAnalyser;
 
 /**
  * The module provider gives access to the module implementation which is
@@ -36,7 +37,7 @@ public class ModuleProvider {
 	public static Collection<? extends Lexer> getAllLexerInstance() {
 		return getAllModuleInstances(Lexer.class);
 	}
-
+	
 	/**
 	 * @return a available Parser implementation instance
 	 * @throws ServiceConfigurationError
@@ -51,6 +52,22 @@ public class ModuleProvider {
 	 */
 	public static Collection<? extends Parser> getAllParserInstance() {
 		return getAllModuleInstances(Parser.class);
+	}
+	
+	/**
+	 * @return a available SemanticAnalyser implementation instance
+	 * @throws ServiceConfigurationError
+	 */
+	public static SemanticAnalyser getSemanticAnalyserInstance() {
+		return getModuleInstance(SemanticAnalyser.class);
+	}
+
+	/**
+	 * @return a collection of all available SemanticAnalyser implementation instance
+	 * @throws ServiceConfigurationError
+	 */
+	public static Collection<? extends SemanticAnalyser> getAllSemanticAnalyserInstance() {
+		return getAllModuleInstances(SemanticAnalyser.class);
 	}
 
 	/**
