@@ -2,6 +2,7 @@ package swp_compiler_ss13.common.ast;
 
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 
 import swp_compiler_ss13.common.lexer.Token;
 
@@ -116,4 +117,31 @@ public interface ASTNode
 	 * @return tokens, whose are in the subtree of this node.
 	 */
 	public List<Token> coverage();
+	
+	/**
+	 * Sets the value of attribute for the semantic analyser
+	 * 
+	 * @param attribute
+	 *            the attribute of the semantic analysis
+	 * @param value
+	 *            the value of the attribute
+	 */
+	public void setAttributeValue(Object attribute, Object value);
+	
+	/**
+	 * Get the value of the attribute for the semantic analyser
+	 * 
+	 * @param attribute
+	 *            the attribute of the semantic analysis
+	 * 
+	 * @return the value of the attribute
+	 */
+	public Object getAttributeValue(Object attribute);
+	
+	/**
+	 * Computes the map of the attributes set by {@link #setAttributeValue}
+	 * 
+	 * @return map with attributes of the semantic analyser, which can be visualised.
+	 */
+	public Map<?,?> getAttributeValues();
 }
