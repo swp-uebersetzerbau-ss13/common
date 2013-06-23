@@ -1,5 +1,6 @@
 package swp_compiler_ss13.common.ast.nodes.unary;
 
+import swp_compiler_ss13.common.ast.nodes.ExpressionNode;
 import swp_compiler_ss13.common.ast.nodes.IdentifierNode;
 
 /**
@@ -15,19 +16,21 @@ import swp_compiler_ss13.common.ast.nodes.IdentifierNode;
 public interface ArrayIdentifierNode extends IdentifierNode
 {
 	/**
-	 * Set the array index to access.
+	 * Set the {@link ExpressionNode} that yields the index
+	 * to access the array.
 	 * 
 	 * @param index
 	 *            The array index.
 	 */
-	public void setIndex(Integer index);
+	public void setIndexNode(ExpressionNode index);
 
 	/**
-	 * Get the array index to access.
+	 * Get the {@link ExpressionNode} that yields the index
+	 * to access the array.
 	 * 
-	 * @return The array index.
+	 * @return The array index expression node.
 	 */
-	public Integer getIndex();
+	public ExpressionNode getIndexNode();
 
 	/**
 	 * Set the identifier to access. This is the array type itself.

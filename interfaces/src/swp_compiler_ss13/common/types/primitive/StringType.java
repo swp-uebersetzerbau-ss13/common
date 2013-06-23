@@ -1,6 +1,5 @@
 package swp_compiler_ss13.common.types.primitive;
 
-import swp_compiler_ss13.common.types.Type;
 
 /**
  * String type definition.
