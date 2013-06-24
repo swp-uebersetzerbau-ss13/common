@@ -10,7 +10,7 @@ import swp_compiler_ss13.common.types.Type;
  * @see <a target="_top" href="https://github.com/swp-uebersetzerbau-ss13/common/wiki/Types">Types Wiki</a>
  * @see <a target="_top" href="https://github.com/swp-uebersetzerbau-ss13/common/issues/8">Types Issue Tracker</a>
  */
-public class StructType extends Type
+public class StructType extends DerivedType
 {
 	/**
 	 * The members in order.
