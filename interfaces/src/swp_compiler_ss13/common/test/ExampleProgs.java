@@ -198,7 +198,7 @@ public class ExampleProgs {
 		Path path;
 
 		/* if executed by global build.xml */
-		if (userDir.endsWith("fuc/code"))
+		if (userDir.endsWith("fuc/code") || userDir.endsWith("crosstesting"))
 			path = FileSystems.getDefault().getPath("common", "examples", progName);
 
 		/* if executed by modules build.xml */
