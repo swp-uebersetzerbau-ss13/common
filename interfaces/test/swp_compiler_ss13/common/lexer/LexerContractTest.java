@@ -479,6 +479,8 @@ public abstract class LexerContractTest<L extends Lexer> {
 		assertThat(lexer.getNextToken().getColumn(), is(12));
 		assertThat(lexer.getNextToken().getColumn(), is(7));
 		assertThat(lexer.getNextToken().getColumn(), is(9));
+		assertThat(lexer.getNextToken().getColumn(), is(10));
+		assertThat(lexer.getNextToken().getColumn(), is(10));
 	}
 
 	@Test
@@ -488,6 +490,8 @@ public abstract class LexerContractTest<L extends Lexer> {
 		assertThat(lexer.getNextToken().getColumn(), is(5));
 		assertThat(lexer.getNextToken().getColumn(), is(3));
 		assertThat(lexer.getNextToken().getColumn(), is(1));
+		assertThat(lexer.getNextToken().getColumn(), is(2));
+		assertThat(lexer.getNextToken().getColumn(), is(2));
 	}
 
 	@Test
@@ -499,6 +503,13 @@ public abstract class LexerContractTest<L extends Lexer> {
 		assertThat(lexer.getNextToken().getLine(), is(4));
 		assertThat(lexer.getNextToken().getLine(), is(5));
 		assertThat(lexer.getNextToken().getLine(), is(5));
+		assertThat(lexer.getNextToken().getLine(), is(5));
+	}
+	
+	@Test
+	public void lexerCountsLinesCorrectlyForEof() {
+		prepareLexer("\n\n\n");
+		assertThat(lexer.getNextToken().getLine(), is(4));
 	}
 
 	/**
