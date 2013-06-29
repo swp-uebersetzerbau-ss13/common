@@ -1,6 +1,8 @@
 package swp_compiler_ss13.common.test;
 
 
+import swp_compiler_ss13.common.report.ReportType;
+
 import java.io.*;
 import java.nio.file.FileSystems;
 import java.nio.file.Path;
@@ -9,8 +11,9 @@ import java.util.Scanner;
 /**
  *
  *
- * Example programs with expected exitcodes and expected output, including the
- * examples from common/examples.
+ * Example programs with expected exitcodes (return), expected output (print)
+ * and expected report types (from errlog), including the examples from
+ * common/examples.
  *
  *
  * @author Jens V. Fischer
@@ -23,28 +26,32 @@ public class ExampleProgs {
 		String prog = loadExample("m1/simple_add.prog");
 		int expectedExitcode = 6;
 		String expectedOutput = "";
-		return new Object[]{prog, expectedExitcode, expectedOutput};
+		ReportType[] reportTypes = {};
+		return new Object[]{prog, expectedExitcode, expectedOutput, reportTypes};
 	}
 
 	public static Object[] addProg(){
 		String prog = loadExample("m1/add.prog");
 		int expectedExitcode = 27;
 		String expectedOutput = "";
-		return new Object[]{prog, expectedExitcode, expectedOutput};
+		ReportType[] reportTypes = {};
+		return new Object[]{prog, expectedExitcode, expectedOutput, reportTypes};
 	}
 
 	public static Object[] simpleMulProg(){
 		String prog = loadExample("m1/simple_mul.prog");
 		int expectedExitcode = 9;
 		String expectedOutput = "";
-		return new Object[]{prog, expectedExitcode, expectedOutput};
+		ReportType[] reportTypes = {};
+		return new Object[]{prog, expectedExitcode, expectedOutput, reportTypes};
 	}
 
 	public static Object[] parenthesesProg(){
 		String prog = loadExample("m1/paratheses.prog");
 		int expectedExitcode = 8;
 		String expectedOutput = "";
-		return new Object[]{prog, expectedExitcode, expectedOutput};
+		ReportType[] reportTypes = {};
+		return new Object[]{prog, expectedExitcode, expectedOutput, reportTypes};
 	}
 
 
@@ -54,36 +61,41 @@ public class ExampleProgs {
 		String prog = loadExample("m1/error_double_decl.prog");
 
 		int expectedExitcode = -1;
-		String expectedOutput = "ERROR (DOUBLE_DECLARATION): The variable 'i' of type 'LongType' has been declared twice in this scope!";
-		return new Object[]{prog, expectedExitcode, expectedOutput};
+		String expectedOutput = "";
+		ReportType[] reportTypes = {ReportType.DOUBLE_DECLARATION};
+		return new Object[]{prog, expectedExitcode, expectedOutput, reportTypes};
 	}
 
 	public static Object[] invalidIds(){
 		String prog = loadExample("m1/error_invalid_ids.prog");
 		int expectedExitcode = -1;
-		String expectedOutput = "ERROR (UNRECOGNIZED_TOKEN): Found undefined token 'foo$bar'!";
-		return new Object[]{prog, expectedExitcode, expectedOutput};
+		String expectedOutput = "";
+		ReportType[] reportTypes = {ReportType.UNRECOGNIZED_TOKEN};
+		return new Object[]{prog, expectedExitcode, expectedOutput, reportTypes};
 	}
 
 	public static Object[] multipleMinusENotation(){
 		String prog = loadExample("m1/error_multiple_minus_e_notation.prog");
 		int expectedExitcode = -1;
-		String expectedOutput = "ERROR (UNRECOGNIZED_TOKEN): Found undefined token '10e----1'!";
-		return new Object[]{prog, expectedExitcode, expectedOutput};
+		String expectedOutput = "";
+		ReportType[] reportTypes = {ReportType.UNRECOGNIZED_TOKEN};
+		return new Object[]{prog, expectedExitcode, expectedOutput, reportTypes};
 	}
 
 	public static Object[] multiplePlusesInExp(){
 		String prog = loadExample("m1/error_multiple_pluses_in_exp.prog");
 		int expectedExitcode = -1;
-		String expectedOutput = "An error occurred: No entry for + in parsetable!";
-		return new Object[]{prog, expectedExitcode, expectedOutput};
+		String expectedOutput = "";
+		ReportType[] reportTypes = {ReportType.UNDEFINED};
+		return new Object[]{prog, expectedExitcode, expectedOutput, reportTypes};
 	}
 
 	public static Object[] undefReturnProg(){
 		String prog = loadExample("m1/error_undef_return.prog");
 		int expectedExitcode = 0;
-		String expectedOutput = "WARNNING (UNDEFINED): Variable “spam” may be used without initialization.";
-		return new Object[]{prog, expectedExitcode, expectedOutput};
+		String expectedOutput = "";
+		ReportType[] reportTypes = {ReportType.UNDEFINED};
+		return new Object[]{prog, expectedExitcode, expectedOutput, reportTypes};
 	}
 
 	/* M1 additional progs */
@@ -93,7 +105,8 @@ public class ExampleProgs {
 		String prog = "";
 		int expectedExitcode = 0;
 		String expectedOutput = "";
-		return new Object[]{prog, expectedExitcode, expectedOutput};
+		ReportType[] reportTypes = {};
+		return new Object[]{prog, expectedExitcode, expectedOutput, reportTypes};
 	}
 
 	/* M2 progs */
@@ -102,14 +115,16 @@ public class ExampleProgs {
 		String prog = loadExample("m2/assignment.prog");
 		int expectedExitcode = 10;
 		String expectedOutput = "";
-		return new Object[]{prog, expectedExitcode, expectedOutput};
+		ReportType[] reportTypes = {};
+		return new Object[]{prog, expectedExitcode, expectedOutput, reportTypes};
 	}
 
 	public static Object[] condProg() {
 		String prog = loadExample("m2/cond.prog");
 		int expectedExitcode = 5;
 		String expectedOutput = "";
-		return new Object[]{prog, expectedExitcode, expectedOutput};
+		ReportType[] reportTypes = {};
+		return new Object[]{prog, expectedExitcode, expectedOutput, reportTypes};
 	}
 
 	public static Object[] printProg() {
@@ -120,7 +135,8 @@ public class ExampleProgs {
 				"18121313223\n" +
 				"-2.323000e-99\n" +
 				"jagÄrEttString\"\n";
-		return new Object[]{prog, expectedExitcode, expectedOutput};
+		ReportType[] reportTypes = {};
+		return new Object[]{prog, expectedExitcode, expectedOutput, reportTypes};
 	}
 
 	/* M2 additional progs */
@@ -130,7 +146,8 @@ public class ExampleProgs {
 		String prog = "return;";
 		int expectedExitcode = 0;
 		String expectedOutput = "";
-		return new Object[]{prog, expectedExitcode, expectedOutput};
+		ReportType[] reportTypes = {};
+		return new Object[]{prog, expectedExitcode, expectedOutput, reportTypes};
 	}
 
 	/* array test prog 1 */
@@ -138,7 +155,8 @@ public class ExampleProgs {
 		String prog = "long l; long [ 3 ] a; a [ 0 ] = 42; l = a [ 0 ]; return l;";
 		int expectedExitcode = 42;
 		String expectedOutput = "";
-		return new Object[]{prog, expectedExitcode, expectedOutput};
+		ReportType[] reportTypes = {};
+		return new Object[]{prog, expectedExitcode, expectedOutput, reportTypes};
 	}
 
 	/* array test prog 2 */
@@ -146,7 +164,8 @@ public class ExampleProgs {
 		String prog = "long [ 3 ] a; a [ 0 ] = 42; print a [ 0 ]; return; ";
 		int expectedExitcode = 0;
 		String expectedOutput = "42\n";
-		return new Object[]{prog, expectedExitcode, expectedOutput};
+		ReportType[] reportTypes = {};
+		return new Object[]{prog, expectedExitcode, expectedOutput, reportTypes};
 	}
 
 	/* array test prog 2 */
@@ -154,7 +173,8 @@ public class ExampleProgs {
 		String prog = "long [ 3 ] a; a [ 0 ] = 42; return a [ 0 ];";
 		int expectedExitcode = 42;
 		String expectedOutput = "";
-		return new Object[]{prog, expectedExitcode, expectedOutput};
+		ReportType[] reportTypes = {};
+		return new Object[]{prog, expectedExitcode, expectedOutput, reportTypes};
 	}
 
 	/**
@@ -167,7 +187,8 @@ public class ExampleProgs {
 		String prog = "bool b; b = true; return b";
 		int expectedExitcode = 0;
 		String expectedOutput = "42\n";
-		return new Object[]{prog, expectedExitcode, expectedOutput};
+		ReportType[] reportTypes = {};
+		return new Object[]{prog, expectedExitcode, expectedOutput, reportTypes};
 	}
 
 	/* M3 example progs */
@@ -176,39 +197,37 @@ public class ExampleProgs {
 		String prog = loadExample("m3/fib.prog");
 		int expectedExitcode = 98;
 		String expectedOutput = "6765\n";
-		return new Object[]{prog, expectedExitcode, expectedOutput};
+		ReportType[] reportTypes = {};
+		return new Object[]{prog, expectedExitcode, expectedOutput, reportTypes};
 	}
 
 	public static Object[] matrixMultiplicationProg(){
 		String prog = loadExample("m3/matrixMultiplication.prog");
 		int expectedExitcode = 0;
 		String expectedOutput = "14 46\n28 92\n42 138\n42 138\n";
-		return new Object[]{prog, expectedExitcode, expectedOutput};
+		ReportType[] reportTypes = {};
+		return new Object[]{prog, expectedExitcode, expectedOutput, reportTypes};
 	}
 
 	public static Object[] newtonProg(){
 		String prog = loadExample("m3/newton.prog");
 		int expectedExitcode = 0;
 		String expectedOutput = "";
-		return new Object[]{prog, expectedExitcode, expectedOutput};
+		ReportType[] reportTypes = {};
+		return new Object[]{prog, expectedExitcode, expectedOutput, reportTypes};
 	}
 
 	private static String loadExample(String progName) {
 		String userDir = System.getProperty("user.dir");
 		Path path;
 
-		/* if executed by global build.xml */
+		/* handling different paths depending on from where the tests are called*/
 		if (userDir.endsWith("fuc/code") || userDir.endsWith("crosstesting"))
 			path = FileSystems.getDefault().getPath("common", "examples", progName);
-
-		/* if executed by modules build.xml */
 		else if (userDir.endsWith("fuc/code/test") || userDir.endsWith("crosstesting/crosstest") )
 			path = FileSystems.getDefault().getPath("..", "common", "examples", progName);
-
-		/* if in unknown user.dir */
-		else
+		else /* will fail */
 			path = FileSystems.getDefault().getPath(progName);
-
 		try {
 			return new Scanner(path, "UTF-8").useDelimiter("\\A").next();
 		} catch (IOException e) {
