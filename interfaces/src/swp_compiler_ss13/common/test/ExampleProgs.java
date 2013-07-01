@@ -98,17 +98,6 @@ public class ExampleProgs {
 		return new Object[]{prog, expectedExitcode, expectedOutput, reportTypes};
 	}
 
-	/* M1 additional progs */
-
-	/* test empty prog */
-	public static Object[] emptyProg() {
-		String prog = "";
-		int expectedExitcode = 0;
-		String expectedOutput = "";
-		ReportType[] reportTypes = {};
-		return new Object[]{prog, expectedExitcode, expectedOutput, reportTypes};
-	}
-
 	/* M2 progs */
 
 	public static Object[] assignmentProg(){
@@ -139,58 +128,6 @@ public class ExampleProgs {
 		return new Object[]{prog, expectedExitcode, expectedOutput, reportTypes};
 	}
 
-	/* M2 additional progs */
-
-	/* test prog for regression test against return bug */
-	public static Object[] returnProg() {
-		String prog = "return;";
-		int expectedExitcode = 0;
-		String expectedOutput = "";
-		ReportType[] reportTypes = {};
-		return new Object[]{prog, expectedExitcode, expectedOutput, reportTypes};
-	}
-
-	/* array test prog 1 */
-	public static Object[] arrayProg1() {
-		String prog = "long l; long [ 3 ] a; a [ 0 ] = 42; l = a [ 0 ]; return l;";
-		int expectedExitcode = 42;
-		String expectedOutput = "";
-		ReportType[] reportTypes = {};
-		return new Object[]{prog, expectedExitcode, expectedOutput, reportTypes};
-	}
-
-	/* array test prog 2 */
-	public static Object[] arrayProg2() {
-		String prog = "long [ 3 ] a; a [ 0 ] = 42; print a [ 0 ]; return; ";
-		int expectedExitcode = 0;
-		String expectedOutput = "42\n";
-		ReportType[] reportTypes = {};
-		return new Object[]{prog, expectedExitcode, expectedOutput, reportTypes};
-	}
-
-	/* array test prog 2 */
-	public static Object[] arrayProg3() {
-		String prog = "long [ 3 ] a; a [ 0 ] = 42; return a [ 0 ];";
-		int expectedExitcode = 42;
-		String expectedOutput = "";
-		ReportType[] reportTypes = {};
-		return new Object[]{prog, expectedExitcode, expectedOutput, reportTypes};
-	}
-
-	/**
-	 * As the compiler does not implement functions yet, the return statement is
-	 * effectivly the exit code of the implicit main function. As OS'es usually
-	 * allow only positive natural numbers as exit codes, only returning longs
-	 * is specified and implemented yet.
-	 */
-	public static Object[] returnBool() {
-		String prog = "bool b; b = true; return b";
-		int expectedExitcode = 0;
-		String expectedOutput = "42\n";
-		ReportType[] reportTypes = {};
-		return new Object[]{prog, expectedExitcode, expectedOutput, reportTypes};
-	}
-
 	/* M3 example progs */
 
 	public static Object[] fibProg(){
@@ -211,6 +148,76 @@ public class ExampleProgs {
 
 	public static Object[] newtonProg(){
 		String prog = loadExample("m3/newton.prog");
+		int expectedExitcode = 0;
+		String expectedOutput = "";
+		ReportType[] reportTypes = {};
+		return new Object[]{prog, expectedExitcode, expectedOutput, reportTypes};
+	}
+
+	/* Additional progs */
+
+	/* test empty prog */
+	public static Object[] emptyProg() {
+		String prog = loadExample("additional/empty.prog");
+		int expectedExitcode = 0;
+		String expectedOutput = "";
+		ReportType[] reportTypes = {};
+		return new Object[]{prog, expectedExitcode, expectedOutput, reportTypes};
+	}
+
+	/* test prog for regression test against return bug */
+	public static Object[] returnProg() {
+		String prog = loadExample("additional/return.prog");
+		int expectedExitcode = 0;
+		String expectedOutput = "";
+		ReportType[] reportTypes = {};
+		return new Object[]{prog, expectedExitcode, expectedOutput, reportTypes};
+	}
+
+	/* array test prog 1 */
+	public static Object[] arrayProg1() {
+		String prog = loadExample("additional/array1.prog");
+		int expectedExitcode = 42;
+		String expectedOutput = "";
+		ReportType[] reportTypes = {};
+		return new Object[]{prog, expectedExitcode, expectedOutput, reportTypes};
+	}
+
+	/* array test prog 2 */
+	public static Object[] arrayProg2() {
+		String prog = loadExample("additional/array2.prog");
+		int expectedExitcode = 0;
+		String expectedOutput = "42\n";
+		ReportType[] reportTypes = {};
+		return new Object[]{prog, expectedExitcode, expectedOutput, reportTypes};
+	}
+
+	/* array test prog 3 */
+	public static Object[] arrayProg3() {
+		String prog = loadExample("additional/array3.prog");
+		int expectedExitcode = 42;
+		String expectedOutput = "";
+		ReportType[] reportTypes = {};
+		return new Object[]{prog, expectedExitcode, expectedOutput, reportTypes};
+	}
+
+	/**
+	 * As the compiler does not implement functions yet, the return statement is
+	 * effectivly the exit code of the implicit main function. As OS'es usually
+	 * allow only positive natural numbers as exit codes, only returning longs
+	 * is specified and implemented yet.
+	 */
+	public static Object[] returnBool() {
+		String prog = loadExample("additional/return_bool.prog");
+		int expectedExitcode = 0;
+		String expectedOutput = "42\n";
+		ReportType[] reportTypes = {};
+		return new Object[]{prog, expectedExitcode, expectedOutput, reportTypes};
+	}
+
+	/* creative customised tests */
+	public static Object[] calendarProg() {
+		String prog = loadExample("additional/calendar.prog");
 		int expectedExitcode = 0;
 		String expectedOutput = "";
 		ReportType[] reportTypes = {};
