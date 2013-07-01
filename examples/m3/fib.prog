@@ -4,7 +4,8 @@
 
 
 long[21] numbers;
-long i = 0;
+long i;
+i = 0;
 
 {
         long i;
