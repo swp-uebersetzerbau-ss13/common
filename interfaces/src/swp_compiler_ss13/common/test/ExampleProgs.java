@@ -158,7 +158,7 @@ public class ExampleProgs {
 
 	/* test empty prog */
 	public static Object[] emptyProg() {
-		String prog = loadExample("m4/empty.prog");
+		String prog = loadExample("additional/empty.prog");
 		int expectedExitcode = 0;
 		String expectedOutput = "";
 		ReportType[] reportTypes = {};
@@ -167,7 +167,7 @@ public class ExampleProgs {
 
 	/* test prog for regression test against return bug */
 	public static Object[] returnProg() {
-		String prog = loadExample("m4/return.prog");
+		String prog = loadExample("additional/return.prog");
 		int expectedExitcode = 0;
 		String expectedOutput = "";
 		ReportType[] reportTypes = {};
@@ -176,7 +176,7 @@ public class ExampleProgs {
 
 	/* array test prog 1 */
 	public static Object[] arrayProg1() {
-		String prog = loadExample("m4/array1.prog");
+		String prog = loadExample("additional/array1.prog");
 		int expectedExitcode = 42;
 		String expectedOutput = "";
 		ReportType[] reportTypes = {};
@@ -185,7 +185,7 @@ public class ExampleProgs {
 
 	/* array test prog 2 */
 	public static Object[] arrayProg2() {
-		String prog = loadExample("m4/array2.prog");
+		String prog = loadExample("additional/array2.prog");
 		int expectedExitcode = 0;
 		String expectedOutput = "42\n";
 		ReportType[] reportTypes = {};
@@ -194,7 +194,7 @@ public class ExampleProgs {
 
 	/* array test prog 3 */
 	public static Object[] arrayProg3() {
-		String prog = loadExample("m4/array3.prog");
+		String prog = loadExample("additional/array3.prog");
 		int expectedExitcode = 42;
 		String expectedOutput = "";
 		ReportType[] reportTypes = {};
@@ -208,7 +208,7 @@ public class ExampleProgs {
 	 * is specified and implemented yet.
 	 */
 	public static Object[] returnBool() {
-		String prog = loadExample("m4/return_bool.prog");
+		String prog = loadExample("additional/return_bool.prog");
 		int expectedExitcode = 0;
 		String expectedOutput = "42\n";
 		ReportType[] reportTypes = {};
@@ -217,7 +217,7 @@ public class ExampleProgs {
 
 	/* creative customised tests */
 	public static Object[] calendarProg() {
-		String prog = loadExample("m4/calendar.prog");
+		String prog = loadExample("additional/calendar.prog");
 		int expectedExitcode = 0;
 		String expectedOutput = "";
 		ReportType[] reportTypes = {};
