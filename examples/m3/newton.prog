@@ -5,6 +5,7 @@
 
 double radicand;
 double guess;
+double error;
 string res;
 
 radicand = 2;
