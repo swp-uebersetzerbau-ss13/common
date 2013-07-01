@@ -1,1 +1,0 @@
-long [ 3 ] a; a [ 0 ] = 42; print a [ 0 ]; return;
