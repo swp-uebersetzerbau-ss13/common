@@ -128,7 +128,7 @@ public class ExampleProgs {
 	}
 
 	public static Object[] printProg() {
-		String prog = loadExample("m2"+File.separator+"print.prog")
+		String prog = loadExample("m2"+File.separator+"print.prog");
 		int expectedExitcode = 0;
 		String expectedOutput = "" +
 				"true\n" +
