@@ -26,3 +26,5 @@ while(true) {
 	if(i + 1 == 360) break;
 	else i = i + 1;
 }
+
+return calendar[359].day;
