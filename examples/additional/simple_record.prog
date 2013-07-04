@@ -1,0 +1,7 @@
+record {
+	long content;
+} struct;
+
+struct.content = 1;
+
+return;

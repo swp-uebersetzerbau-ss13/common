@@ -217,6 +217,14 @@ public class ExampleProgs {
 	}
 
 	/* creative tests */
+	public static Object[] simpleRecordProg() {
+		String prog = loadExample("additional"+File.separator+"simple_record.prog");
+		int expectedExitcode = 0;
+		String expectedOutput = "";
+		ReportType[] reportTypes = {};
+		return new Object[]{prog, expectedExitcode, expectedOutput, reportTypes};
+	}
+	
 	public static Object[] recordProg() {
 		String prog = loadExample("additional"+File.separator+"record.prog");
 		int expectedExitcode = 0;
