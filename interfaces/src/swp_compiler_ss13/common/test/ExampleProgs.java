@@ -7,6 +7,7 @@ import java.io.*;
 import java.nio.file.FileSystems;
 import java.nio.file.Path;
 import java.util.Scanner;
+import java.util.NoSuchElementException;
 
 /**
  *
@@ -240,6 +241,8 @@ public class ExampleProgs {
 		} catch (IOException e) {
 			throw new RuntimeException("file '" + progName + "' not found at '" +
 					path.toAbsolutePath().normalize() + "'");
+		} catch (NoSuchElementException n) {
+			return "";
 		}
 	}
 
