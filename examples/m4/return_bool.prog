@@ -1,0 +1,1 @@
+bool b; b = true; return b
