@@ -8,11 +8,11 @@ string text;
 date.year = 11;
 date.month = 11;
 date.day = 10;
-if ((year == month) && (month == day) && (day == 11)) {
+if ((date.year == date.month) && (date.month == date.day) && (date.day == 11)) {
 	text = "Skyrim was released";
 	print text;
 }
-if (!((year == month) && (month == day) && (day == 11))) {
+if (!((date.year == date.month) && (date.month == date.day) && (date.day == 11))) {
 	text = "Skyrim was not released";
 	print text;
 }
