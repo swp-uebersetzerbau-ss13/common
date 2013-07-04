@@ -217,6 +217,14 @@ public class ExampleProgs {
 	}
 
 	/* creative tests */
+	public static Object[] recordProg() {
+		String prog = loadExample("additional"+File.separator+"record.prog");
+		int expectedExitcode = 0;
+		String expectedOutput = "Skyrim was not released";
+		ReportType[] reportTypes = {};
+		return new Object[]{prog, expectedExitcode, expectedOutput, reportTypes};
+	}
+	
 	public static Object[] calendarProg() {
 		String prog = loadExample("additional"+File.separator+"calendar.prog");
 		int expectedExitcode = 0;
