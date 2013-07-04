@@ -219,7 +219,7 @@ public class ExampleProgs {
 	/* creative tests */
 	public static Object[] nestedLoopsProg() {
 		String prog = loadExample("additional"+File.separator+"nested_loops.prog");
-		int expectedExitcode = 19;
+		int expectedExitcode = 139;
 		String expectedOutput = "";
 		ReportType[] reportTypes = {};
 		return new Object[]{prog, expectedExitcode, expectedOutput, reportTypes};
