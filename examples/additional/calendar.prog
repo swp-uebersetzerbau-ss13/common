@@ -2,8 +2,7 @@ record {
 	long year;
 	long month;
 	long day;
-} date;
-date[360] calendar;
+} [360] calendar;
 
 long i;
 long year;
