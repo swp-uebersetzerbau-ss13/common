@@ -1,13 +1,14 @@
 package swp_compiler_ss13.common.test;
 
 
-import swp_compiler_ss13.common.report.ReportType;
-
-import java.io.*;
+import java.io.File;
+import java.io.IOException;
 import java.nio.file.FileSystems;
 import java.nio.file.Path;
-import java.util.Scanner;
 import java.util.NoSuchElementException;
+import java.util.Scanner;
+
+import swp_compiler_ss13.common.report.ReportType;
 
 /**
  *
@@ -258,8 +259,13 @@ public class ExampleProgs {
 			path = FileSystems.getDefault().getPath("common", "examples", progName);
 		else if (userDir.endsWith("fuc/code/test") || userDir.endsWith("crosstesting/crosstest") )
 			path = FileSystems.getDefault().getPath("..", "common", "examples", progName);
-		else /* will fail */
-			path = FileSystems.getDefault().getPath(progName);
+		else {
+		   String regex = ".*fuc\\" + File.separator + "code\\" + File.separator + "[^\\" + File.separator + "]*";
+		   if (userDir.matches(regex)) /* for paths directly under fuc\code */
+   		   path = FileSystems.getDefault().getPath("..", "common", "examples", progName);
+   		else /* will fail */
+   			path = FileSystems.getDefault().getPath(progName);
+		}
 		try {
 			return new Scanner(path, "UTF-8").useDelimiter("\\A").next();
 		} catch (IOException e) {
