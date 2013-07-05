@@ -88,7 +88,7 @@ public class ExampleProgs {
 		String prog = loadExample("m1"+File.separator+"error_multiple_pluses_in_exp.prog");
 		int expectedExitcode = -1;
 		String expectedOutput = "";
-		ReportType[] reportTypes = {ReportType.UNDEFINED};
+		ReportType[] reportTypes = {ReportType.WORD_NOT_IN_GRAMMAR};
 		return new Object[]{prog, expectedExitcode, expectedOutput, reportTypes};
 	}
 
