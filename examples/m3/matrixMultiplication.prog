@@ -17,9 +17,9 @@ long iy;
 long i; 
 
 # matrix
-long[4][3] a;
-long[3][2] b;
-long[4][2] c;
+long[3][4] a;
+long[2][3] b;
+long[2][4] c;
 
 string sep;
 string br;
