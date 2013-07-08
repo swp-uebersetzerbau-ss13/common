@@ -257,7 +257,7 @@ public class ExampleProgs {
 		/* handling different paths depending on from where the tests are called*/
 		if (userDir.endsWith("fuc/code") || userDir.endsWith("crosstesting"))
 			path = FileSystems.getDefault().getPath("common", "examples", progName);
-		else if (userDir.endsWith("fuc/code/test") || userDir.endsWith("crosstesting/crosstest") )
+		else if (userDir.endsWith("fuc" + File.separator + "code/test") || userDir.endsWith("crosstesting" + File.separator + "crosstest") )
 			path = FileSystems.getDefault().getPath("..", "common", "examples", progName);
 		else {
 		   String regex = ".*fuc\\" + File.separator + "code\\" + File.separator + "[^\\" + File.separator + "]*";
