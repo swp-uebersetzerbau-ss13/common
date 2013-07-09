@@ -134,7 +134,7 @@ public class ExampleProgs {
 
 	public static Object[] fibProg(){
 		String prog = loadExample("m3"+File.separator+"fib.prog");
-		int expectedExitcode = 98;
+		int expectedExitcode = 233;
 		String expectedOutput = "6765\n";
 		ReportType[] reportTypes = {};
 		return new Object[]{prog, expectedExitcode, expectedOutput, reportTypes};
