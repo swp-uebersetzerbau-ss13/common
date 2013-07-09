@@ -237,7 +237,7 @@ public class ExampleProgs {
 	public static Object[] recordProg() {
 		String prog = loadExample("additional"+File.separator+"record.prog");
 		int expectedExitcode = 0;
-		String expectedOutput = "Skyrim was not released";
+		String expectedOutput = "Skyrim was not released\n";
 		ReportType[] reportTypes = {};
 		return new Object[]{prog, expectedExitcode, expectedOutput, reportTypes};
 	}
