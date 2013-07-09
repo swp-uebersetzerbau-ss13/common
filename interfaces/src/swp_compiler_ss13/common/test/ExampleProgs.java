@@ -151,7 +151,7 @@ public class ExampleProgs {
 	public static Object[] newtonProg(){
 		String prog = loadExample("m3"+File.separator+"newton.prog");
 		int expectedExitcode = 0;
-		String expectedOutput = "";
+		String expectedOutput = "i hate floating point numbers1.4142156862745097\n";
 		ReportType[] reportTypes = {};
 		return new Object[]{prog, expectedExitcode, expectedOutput, reportTypes};
 	}
