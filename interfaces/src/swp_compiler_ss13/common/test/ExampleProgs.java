@@ -143,7 +143,7 @@ public class ExampleProgs {
 	public static Object[] matrixMultiplicationProg(){
 		String prog = loadExample("m3"+File.separator+"matrixMultiplication.prog");
 		int expectedExitcode = 0;
-		String expectedOutput = "14 46\n28 92\n42 138\n42 138\n";
+		String expectedOutput = "14|46\n28|92\n42|138\n56|184\n";
 		ReportType[] reportTypes = {};
 		return new Object[]{prog, expectedExitcode, expectedOutput, reportTypes};
 	}
