@@ -96,7 +96,7 @@ public class ExampleProgs {
 		String prog = loadExample("m1"+File.separator+"error_undef_return.prog");
 		int expectedExitcode = 0;
 		String expectedOutput = "";
-		ReportType[] reportTypes = {ReportType.UNDEFINED};
+		ReportType[] reportTypes = {};
 		return new Object[]{prog, expectedExitcode, expectedOutput, reportTypes};
 	}
 
