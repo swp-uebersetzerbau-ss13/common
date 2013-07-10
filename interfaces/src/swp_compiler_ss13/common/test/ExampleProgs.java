@@ -244,7 +244,7 @@ public class ExampleProgs {
 	
 	public static Object[] calendarProg() {
 		String prog = loadExample("additional"+File.separator+"calendar.prog");
-		int expectedExitcode = 0;
+		int expectedExitcode = 29;
 		String expectedOutput = "";
 		ReportType[] reportTypes = {};
 		return new Object[]{prog, expectedExitcode, expectedOutput, reportTypes};
