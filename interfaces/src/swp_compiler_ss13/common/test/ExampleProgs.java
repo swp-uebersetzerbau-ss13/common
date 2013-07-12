@@ -96,7 +96,7 @@ public class ExampleProgs {
 		String prog = loadExample("m1"+File.separator+"error_undef_return.prog");
 		int expectedExitcode = 0;
 		String expectedOutput = "";
-		ReportType[] reportTypes = {ReportType.UNDEFINED};
+		ReportType[] reportTypes = {};
 		return new Object[]{prog, expectedExitcode, expectedOutput, reportTypes};
 	}
 
@@ -134,7 +134,7 @@ public class ExampleProgs {
 
 	public static Object[] fibProg(){
 		String prog = loadExample("m3"+File.separator+"fib.prog");
-		int expectedExitcode = 98;
+		int expectedExitcode = 233;
 		String expectedOutput = "6765\n";
 		ReportType[] reportTypes = {};
 		return new Object[]{prog, expectedExitcode, expectedOutput, reportTypes};
@@ -143,7 +143,7 @@ public class ExampleProgs {
 	public static Object[] matrixMultiplicationProg(){
 		String prog = loadExample("m3"+File.separator+"matrixMultiplication.prog");
 		int expectedExitcode = 0;
-		String expectedOutput = "14 46\n28 92\n42 138\n42 138\n";
+		String expectedOutput = "14|46\n28|92\n42|138\n56|184\n";
 		ReportType[] reportTypes = {};
 		return new Object[]{prog, expectedExitcode, expectedOutput, reportTypes};
 	}
@@ -151,7 +151,7 @@ public class ExampleProgs {
 	public static Object[] newtonProg(){
 		String prog = loadExample("m3"+File.separator+"newton.prog");
 		int expectedExitcode = 0;
-		String expectedOutput = "";
+		String expectedOutput = "i hate floating point numbers1.414216e+00\n";
 		ReportType[] reportTypes = {};
 		return new Object[]{prog, expectedExitcode, expectedOutput, reportTypes};
 	}
@@ -220,7 +220,7 @@ public class ExampleProgs {
 	/* creative tests */
 	public static Object[] nestedLoopsProg() {
 		String prog = loadExample("additional"+File.separator+"nested_loops.prog");
-		int expectedExitcode = 139;
+		int expectedExitcode = 29;
 		String expectedOutput = "";
 		ReportType[] reportTypes = {};
 		return new Object[]{prog, expectedExitcode, expectedOutput, reportTypes};
@@ -237,17 +237,25 @@ public class ExampleProgs {
 	public static Object[] recordProg() {
 		String prog = loadExample("additional"+File.separator+"record.prog");
 		int expectedExitcode = 0;
-		String expectedOutput = "Skyrim was not released";
+		String expectedOutput = "Skyrim was not released\n";
 		ReportType[] reportTypes = {};
 		return new Object[]{prog, expectedExitcode, expectedOutput, reportTypes};
 	}
 	
 	public static Object[] calendarProg() {
 		String prog = loadExample("additional"+File.separator+"calendar.prog");
-		int expectedExitcode = 0;
+		int expectedExitcode = 29;
 		String expectedOutput = "";
 		ReportType[] reportTypes = {};
 		return new Object[]{prog, expectedExitcode, expectedOutput, reportTypes};
+	}
+	
+	public static Object[] recordDoubleDProg() {
+      String prog = loadExample("additional"+File.separator+"record_doubled.prog");
+      int expectedExitcode = -1;
+      String expectedOutput = "";
+      ReportType[] reportTypes = {ReportType.DOUBLE_DECLARATION};
+      return new Object[]{prog, expectedExitcode, expectedOutput, reportTypes};
 	}
 
 	private static String loadExample(String progName) {
@@ -257,7 +265,7 @@ public class ExampleProgs {
 		/* handling different paths depending on from where the tests are called*/
 		if (userDir.endsWith("fuc/code") || userDir.endsWith("crosstesting"))
 			path = FileSystems.getDefault().getPath("common", "examples", progName);
-		else if (userDir.endsWith("fuc/code/test") || userDir.endsWith("crosstesting/crosstest") )
+		else if (userDir.endsWith("fuc" + File.separator + "code/test") || userDir.endsWith("crosstesting" + File.separator + "crosstest") )
 			path = FileSystems.getDefault().getPath("..", "common", "examples", progName);
 		else {
 		   String regex = ".*fuc\\" + File.separator + "code\\" + File.separator + "[^\\" + File.separator + "]*";

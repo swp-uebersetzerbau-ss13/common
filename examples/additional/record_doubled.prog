@@ -1,0 +1,6 @@
+# Expect a DOUBLE_DECLARATION error
+record {
+    long i;
+    long i;
+} i;
+return i.i;
